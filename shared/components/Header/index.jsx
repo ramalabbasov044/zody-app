@@ -1,10 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import Button from '../Button'
-import { useTranslation } from "react-i18next"
 
 const Header = () => {
-    const {t,i18n} = useTranslation()
 
     return (
       <Wrapper>
@@ -43,15 +41,11 @@ const Header = () => {
                   <Right>
                       <LanguageDropdown>
                           <LanguageActiveItem>
-                                {i18n.language}
                                 Test123
                           </LanguageActiveItem>
 
                           <LanguageItems>
                               <LanguageItem>
-                                  {
-                                    t('welcome')
-                                  }
                               </LanguageItem>
                           </LanguageItems>
                       </LanguageDropdown>
