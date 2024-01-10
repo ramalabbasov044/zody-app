@@ -1,8 +1,14 @@
-import React from 'react'
-import styled from 'styled-components'
 import Button from '../Button'
 
+import { useState } from 'react'
+import styled from 'styled-components'
+
 const Header = () => {
+    const [isActive,setIsActive] = useState(false) 
+
+    const handleActive = () => {
+        setIsActive(!isActive)
+    } 
 
     return (
       <Wrapper>
@@ -10,7 +16,7 @@ const Header = () => {
               <LogoBody>
                 <Logo
                     src="/logo/main.svg"
-                    alt='asda'
+                    alt='Header Logo'
                 />
               </LogoBody>
 
@@ -39,15 +45,42 @@ const Header = () => {
                   </Navbar>
 
                   <Right>
-                      <LanguageDropdown>
-                          <LanguageActiveItem>
-                                Test123
+                      <LanguageDropdown className={isActive ? "dropdownActive": ""} style={{
+                            
+                        }}>
+                          <LanguageActiveItem className={isActive ? "languageActiveItem": ""} onClick={handleActive}>
+                                <ActiveTitle>
+                                    En
+                                </ActiveTitle>
+
+                                {
+                                    isActive ? (
+                                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4.58335 14.2083L11 7.79166L17.4167 14.2083" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    ) : (
+                                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M19.5 8.5L12.5 15.5L5.5 8.5" stroke="#E6E5E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    )
+                                }
                           </LanguageActiveItem>
 
-                          <LanguageItems>
-                              <LanguageItem>
-                              </LanguageItem>
-                          </LanguageItems>
+                            {
+                                isActive ? (
+                                    <LanguageItems className={isActive ? "itemsActive" : ""}x>
+                                        <LanguageItem>
+                                                Az
+                                        </LanguageItem>
+                                        <LanguageItem>
+                                                Tr
+                                        </LanguageItem>
+                                        <LanguageItem>
+                                                Ru
+                                        </LanguageItem>
+                                    </LanguageItems>
+                                ) : <></>
+                            }
                       </LanguageDropdown>
 
                       <Button 
@@ -72,7 +105,22 @@ export default Header
 
 const Wrapper = styled.header`
     position: relative;
-    z-index: 1;
+    z-index: 2;
+
+    .dropdownActive{
+        background: #A67DFF !important;
+        height: 119px !important;
+        padding: 4px !important;
+    }
+
+    .languageActiveItem{
+        padding: 0px 6px;
+    }
+
+    .itemsActive{
+        top: 35px;
+        padding: 0px 6px;
+    }
 `
 
 const Container = styled.div`
@@ -93,6 +141,7 @@ const Logo = styled.img`
 const NavbarBody = styled.div`
     display: flex;
     gap: 184px;
+    max-height: 44px;
 `
 
 const Navbar = styled.div`
@@ -121,20 +170,41 @@ const Right = styled.div`
 `
 
 const LanguageDropdown = styled.div`
-  
+    position: relative;
+    width: 72px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    transition: 1s;
+    cursor: pointer;
+    height: 44px;
+
+
+    
 `
 
-const LanguageActiveItem = styled.p`
+const LanguageActiveItem = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+`
+
+const ActiveTitle = styled.p`
     color: #FFF;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    font-family: Poppins;
 `
 
 const LanguageItems = styled.div`
     display: flex;
     flex-direction: column;
+    gap: 5px;
+    position: absolute;
+    z-index: 2
 `
 
 const LanguageItem = styled.p`
@@ -143,4 +213,5 @@ const LanguageItem = styled.p`
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    font-family: Poppins;
 `
