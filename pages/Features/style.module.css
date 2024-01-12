@@ -1,0 +1,102 @@
+.Wrapper{
+    background: black;
+}
+
+.Main{
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 3000px;
+}
+
+.BackgroundImage{
+    position: absolute;
+    left: 0;
+    top: 44px;
+}
+
+.ContentOne{
+    position: relative;
+    display: flex;
+    max-width: 1512px;
+    height: 749px;
+    width: 100%;
+    padding: 44px 157px 79px 116px;
+}
+
+.ContentLeft{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 251px;
+    z-index: 3 !important;
+    position: relative;
+}
+
+.ContentPhoneImage{
+    max-width: 756px;
+    width: 756px;
+    max-height: 612px;
+    height: 612px;
+    position: absolute;
+    right: 164px;
+}
+
+.ContentRight{
+}
+
+.starBackground{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 1728px !important;
+    object-fit: cover;
+}
+
+.Vector{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.ContentTwo{
+    position: relative;
+}
+
+.BackgroundImage2{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.ContentTwo{
+    height: 865px;
+    display: flex;
+    max-width: 1512px;
+    width: 100%;
+    padding: 149px 7px 149px 116px;
+}
+
+.ContentLeft2{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 3 !important;
+    position: relative;
+}
+
+.PhoneImageTwo{
+    max-width: 796px;
+    max-height: 566px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right: 186px;
+}
+
+.SimpleContent{
+    
+}

@@ -66,7 +66,7 @@ export default function Home() {
                 </div>
 
                 <div className={styles.Right}>
-                    <Image
+                    <img
                         src="/phone/home/phone1.svg"
                         alt="phone Image"
                         width={664}

@@ -39,7 +39,7 @@ const Header = () => {
               <div className={styles.NavbarBody}>
                   <div className={styles.Navbar}>
                       <li className={styles.List}>
-                        <a className={styles.Item}>
+                        <a onClick={() => push(Routes.Features)} className={styles.Item}>
                             {
                                 t('features')
                             }
