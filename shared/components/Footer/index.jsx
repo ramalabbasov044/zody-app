@@ -189,6 +189,8 @@ const Wrapper = styled.footer`
     background: #060606;
     position: relative;
     z-index: 2;
+    display: flex;
+    justify-content: center;
 `
 
 const Container = styled.div`
@@ -196,6 +198,7 @@ const Container = styled.div`
     display: flex;
     gap: 54px;
     justify-content: space-between;
+    max-width: 1392px;
 `
 
 const Logo = styled.div`

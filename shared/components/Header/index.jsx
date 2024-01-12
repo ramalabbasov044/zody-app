@@ -1,14 +1,24 @@
 import Button from '../Button'
 
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 
 const Header = () => {
-    const [isActive,setIsActive] = useState(false) 
+    const [isActive, setIsActive] = useState(false);
+    const { t, i18n } = useTranslation();
+    const activeLanguage = i18n.language; 
 
     const handleActive = () => {
-        setIsActive(!isActive)
-    } 
+        setIsActive(!isActive);
+    };
+
+    const changeLanguage = (lng) => {
+        i18n.changeLanguage(lng);
+        setIsActive(false); 
+    };
+
+    const languages = ['en', 'az', 'tr', 'ru'].filter(lng => lng !== activeLanguage);
 
     return (
       <Wrapper>
@@ -18,39 +28,50 @@ const Header = () => {
                     src="/logo/main.svg"
                     alt='Header Logo'
                 />
+                 
               </LogoBody>
 
               <NavbarBody>
                   <Navbar>
                       <List>
                         <Item>
-                          Features
+                            {
+                                t('features')
+                            }
                         </Item>
                       </List>
                       <List>
                         <Item>
-                          Help center
+                            {
+                                t('helpCenter')
+                            }
                         </Item>
                       </List>
                       <List>
                         <Item>
-                          Blog
+                            {
+                                t('blog')
+                            }
                         </Item>
                       </List>
                       <List>
                         <Item>
-                          Contact Us
+                            {
+                                t('contact')
+                            }
                         </Item>
                       </List>
                   </Navbar>
 
                   <Right>
-                      <LanguageDropdown className={isActive ? "dropdownActive": ""} style={{
+                      <LanguageDropdown onClick={handleActive} className={isActive ? "dropdownActive": ""} style={{
                             
                         }}>
-                          <LanguageActiveItem className={isActive ? "languageActiveItem": ""} onClick={handleActive}>
+                          <LanguageActiveItem className={isActive ? "languageActiveItem": ""} >
                                 <ActiveTitle>
-                                    En
+                                    {
+                                        i18n.language
+                                    }
                                 </ActiveTitle>
 
                                 {
@@ -68,16 +89,12 @@ const Header = () => {
 
                             {
                                 isActive ? (
-                                    <LanguageItems className={isActive ? "itemsActive" : ""}x>
-                                        <LanguageItem>
-                                                Az
-                                        </LanguageItem>
-                                        <LanguageItem>
-                                                Tr
-                                        </LanguageItem>
-                                        <LanguageItem>
-                                                Ru
-                                        </LanguageItem>
+                                    <LanguageItems className={isActive ? "itemsActive" : ""}>
+                                        {languages.map(lng => (
+                                            <LanguageItem key={lng} onClick={() => changeLanguage(lng)}>
+                                                {lng}
+                                            </LanguageItem>
+                                        ))}
                                     </LanguageItems>
                                 ) : <></>
                             }
@@ -106,6 +123,8 @@ export default Header
 const Wrapper = styled.header`
     position: relative;
     z-index: 2;
+    display: flex;
+    justify-content: center;
 
     .dropdownActive{
         background: #A67DFF !important;
@@ -128,10 +147,16 @@ const Container = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1512px;
+    width: 100%;
 `
 
 const LogoBody = styled.div`
-    padding: 10px;
+    width: 70px;
+    height: 68px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
 
 const Logo = styled.img`
@@ -179,8 +204,6 @@ const LanguageDropdown = styled.div`
     transition: 1s;
     cursor: pointer;
     height: 44px;
-
-
     
 `
 
@@ -214,4 +237,5 @@ const LanguageItem = styled.p`
     font-weight: 500;
     line-height: normal;
     font-family: Poppins;
+    cursor: pointer;
 `
