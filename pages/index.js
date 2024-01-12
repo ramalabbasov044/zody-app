@@ -141,14 +141,6 @@ const Background = styled.img`
     z-index: 0;
 `
 
-const Background2 = styled.img`
-  position: absolute;
-  width: 100%;
-  height: 857px;
-  top: 0;
-  left: 0;
-`
-
 const Main = styled.main`
     position: relative;
     z-index: 1;
