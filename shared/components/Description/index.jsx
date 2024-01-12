@@ -1,24 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
+import styles from './style.module.css'
 
 const DescriptionC = ({ mwidth , title , margin , size , weight }) => {
-    const Description = styled.p`
-        max-width: ${mwidth};
-        margin: ${margin};
-        font-size: ${size};
-        color: var(--white, #FFF);
-        font-family: Poppins;
-        font-style: normal;
-        font-weight: ${weight};
-        line-height: 130%;
-    `
+    const DescriptionStyle = {
+        maxWidth: mwidth,
+        margin: margin,
+        fontSize: size,
+        fontWeight: weight,
+        color: '#fff'
+    }
 
     return (
-      <Description>
+      <p style={DescriptionStyle} className={styles.Description}>
           {
               title
           }
-      </Description>
+      </p>
     )
 }
 

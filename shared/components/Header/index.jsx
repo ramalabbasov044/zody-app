@@ -1,9 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 import Button from '../Button'
-
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import styled from 'styled-components'
-
+import styles from './style.module.css'
 const Header = () => {
     const [isActive, setIsActive] = useState(false);
     const { t, i18n } = useTranslation();
@@ -21,58 +20,57 @@ const Header = () => {
     const languages = ['en', 'az', 'tr', 'ru'].filter(lng => lng !== activeLanguage);
 
     return (
-      <Wrapper>
-          <Container>
-              <LogoBody>
-                <Logo
+      <div className={styles.Wrapper}>
+          <div className={styles.Container}>
+              <div className={styles.LogoBody}>
+                <img
                     src="/logo/main.svg"
                     alt='Header Logo'
+                    className={styles.Logo}
                 />
                  
-              </LogoBody>
+              </div>
 
-              <NavbarBody>
-                  <Navbar>
-                      <List>
-                        <Item>
+              <div className={styles.NavbarBody}>
+                  <div className={styles.Navbar}>
+                      <li className={styles.List}>
+                        <a className={styles.Item}>
                             {
                                 t('features')
                             }
-                        </Item>
-                      </List>
-                      <List>
-                        <Item>
+                        </a>
+                      </li>
+                      <li className={styles.List}>
+                        <a className={styles.Item}>
                             {
                                 t('helpCenter')
                             }
-                        </Item>
-                      </List>
-                      <List>
-                        <Item>
+                        </a>
+                      </li>
+                      <li className={styles.List}>
+                        <a className={styles.Item}>
                             {
                                 t('blog')
                             }
-                        </Item>
-                      </List>
-                      <List>
-                        <Item>
+                        </a>
+                      </li>
+                      <li className={styles.List}>
+                        <a className={styles.Item}>
                             {
                                 t('contact')
                             }
-                        </Item>
-                      </List>
-                  </Navbar>
+                        </a>
+                      </li>
+                  </div>
 
-                  <Right>
-                      <LanguageDropdown onClick={handleActive} className={isActive ? "dropdownActive": ""} style={{
-                            
-                        }}>
-                          <LanguageActiveItem className={isActive ? "languageActiveItem": ""} >
-                                <ActiveTitle>
+                  <div className={styles.Right}>
+                      <div onClick={handleActive} className={`${styles.LanguageDropdown}  ${isActive ? `${styles.dropdownActive}`: ""}`} >
+                          <div className={`${styles.LanguageActiveItem} ${isActive ? `${styles.languageActiveItem}`: ""}`} >
+                                <p className={styles.ActiveTitle}>
                                     {
                                         i18n.language
                                     }
-                                </ActiveTitle>
+                                </p>
 
                                 {
                                     isActive ? (
@@ -85,20 +83,20 @@ const Header = () => {
                                         </svg>
                                     )
                                 }
-                          </LanguageActiveItem>
+                          </div>
 
                             {
                                 isActive ? (
-                                    <LanguageItems className={isActive ? "itemsActive" : ""}>
+                                    <div className={`${styles.LanguageItems} ${isActive ? `${styles.itemsActive}` : ""}`}>
                                         {languages.map(lng => (
-                                            <LanguageItem key={lng} onClick={() => changeLanguage(lng)}>
+                                            <p className={styles.LanguageItem} key={lng} onClick={() => changeLanguage(lng)}>
                                                 {lng}
-                                            </LanguageItem>
+                                            </p>
                                         ))}
-                                    </LanguageItems>
+                                    </div>
                                 ) : <></>
                             }
-                      </LanguageDropdown>
+                      </div>
 
                       <Button 
                           shadow={"none"}
@@ -111,131 +109,131 @@ const Header = () => {
                           background={"#A67DFF"}
                           hoverBackground={"#7D57CE"}
                       />
-                  </Right>  
-              </NavbarBody>  
-          </Container>
-      </Wrapper>
+                  </div>  
+              </div>  
+          </div>
+      </div>
     )
 }
 
 export default Header
 
-const Wrapper = styled.header`
-    position: relative;
-    z-index: 2;
-    display: flex;
-    justify-content: center;
+// const Wrapper = styled.header`
+//     position: relative;
+//     z-index: 2;
+//     display: flex;
+//     justify-content: center;
 
-    .dropdownActive{
-        background: #A67DFF !important;
-        height: 119px !important;
-        padding: 4px !important;
-    }
+//     .dropdownActive{
+//         background: #A67DFF !important;
+//         height: 119px !important;
+//         padding: 4px !important;
+//     }
 
-    .languageActiveItem{
-        padding: 0px 6px;
-    }
+//     .languageActiveItem{
+//         padding: 0px 6px;
+//     }
 
-    .itemsActive{
-        top: 35px;
-        padding: 0px 6px;
-    }
-`
+//     .itemsActive{
+//         top: 35px;
+//         padding: 0px 6px;
+//     }
+// `
 
-const Container = styled.div`
-    padding: 4px 116px 8px 116px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1512px;
-    width: 100%;
-`
+// const Container = styled.div`
+//     padding: 4px 116px 8px 116px;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     max-width: 1512px;
+//     width: 100%;
+// `
 
-const LogoBody = styled.div`
-    width: 70px;
-    height: 68px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
+// const LogoBody = styled.div`
+//     width: 70px;
+//     height: 68px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// `
 
-const Logo = styled.img`
+// const Logo = styled.img`
   
-`
+// `
 
-const NavbarBody = styled.div`
-    display: flex;
-    gap: 184px;
-    max-height: 44px;
-`
+// const NavbarBody = styled.div`
+//     display: flex;
+//     gap: 184px;
+//     max-height: 44px;
+// `
 
-const Navbar = styled.div`
-    display: flex;
-    gap: 40px;
-`
+// const Navbar = styled.div`
+//     display: flex;
+//     gap: 40px;
+// `
 
-const List = styled.li`
-    list-style-type: none;
-    padding: 10px;
-`
+// const List = styled.li`
+//     list-style-type: none;
+//     padding: 10px;
+// `
 
-const Item = styled.a`
-    color: #FFF;
-    font-family: Poppins;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    cursor: pointer;
-`
+// const Item = styled.a`
+//     color: #FFF;
+//     font-family: Poppins;
+//     font-size: 16px;
+//     font-style: normal;
+//     font-weight: 500;
+//     line-height: normal;
+//     cursor: pointer;
+// `
 
-const Right = styled.div`
-    display: flex;
-    gap: 22px;
-`
+// const Right = styled.div`
+//     display: flex;
+//     gap: 22px;
+// `
 
-const LanguageDropdown = styled.div`
-    position: relative;
-    width: 72px;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 10px;
-    transition: 1s;
-    cursor: pointer;
-    height: 44px;
+// const LanguageDropdown = styled.div`
+//     position: relative;
+//     width: 72px;
+//     padding: 10px;
+//     display: flex;
+//     justify-content: space-between;
+//     border-radius: 10px;
+//     transition: 1s;
+//     cursor: pointer;
+//     height: 44px;
     
-`
+// `
 
-const LanguageActiveItem = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-`
+// const LanguageActiveItem = styled.div`
+//     width: 100%;
+//     display: flex;
+//     justify-content: space-between;
+// `
 
-const ActiveTitle = styled.p`
-    color: #FFF;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    font-family: Poppins;
-`
+// const ActiveTitle = styled.p`
+//     color: #FFF;
+//     font-size: 16px;
+//     font-style: normal;
+//     font-weight: 500;
+//     line-height: normal;
+//     font-family: Poppins;
+// `
 
-const LanguageItems = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    position: absolute;
-    z-index: 2
-`
+// const LanguageItems = styled.div`
+//     display: flex;
+//     flex-direction: column;
+//     gap: 5px;
+//     position: absolute;
+//     z-index: 2;
+// `
 
-const LanguageItem = styled.p`
-    color: #FFF;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    font-family: Poppins;
-    cursor: pointer;
-`
+// const LanguageItem = styled.p`
+//     color: #FFF;
+//     font-size: 16px;
+//     font-style: normal;
+//     font-weight: 500;
+//     line-height: normal;
+//     font-family: Poppins;
+//     cursor: pointer;
+// `

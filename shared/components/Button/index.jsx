@@ -1,33 +1,31 @@
-import styled from "styled-components"
-
+import { useState } from 'react';
+import styles from './style.module.css'
 const Button = ({ 
     title , color , weight , size , padding , shadow , background , radius , hoverBackground
 }) => {
-  
-    const Button = styled.button`
-        color: ${color};
-        padding: ${padding};
-        box-shadow: ${shadow};
-        background-color: ${background};
-        border: 0;
-        font-size: ${size};
-        font-style: normal;
-        font-weight: ${weight};
-        line-height: normal;
-        border-radius: ${radius};
-        cursor: pointer;
+    const [isHovered, setIsHovered] = useState(false);
 
-        &:hover{
-            background-color: ${hoverBackground};
-        }
-    `
+    const buttonStyle = {
+        color: color,
+        padding: padding,
+        boxShadow: shadow,
+        backgroundColor: isHovered ? hoverBackground : background,
+        fontSize: size,
+        fontWeight: weight,
+        borderRadius: radius,
+    };
 
     return (
-        <Button>
+        <button 
+            style={buttonStyle}
+            className={styles.Button}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
             {
                 title
             }  
-        </Button>
+        </button>
     )
 }
 

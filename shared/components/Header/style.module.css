@@ -1,0 +1,118 @@
+.Wrapper{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+
+    .dropdownActive{
+        background: #A67DFF !important;
+        height: 119px !important;
+        padding: 4px !important;
+    }
+
+    .languageActiveItem{
+        padding: 0px 6px;
+    }
+
+    .itemsActive{
+        top: 35px;
+        padding: 0px 6px;
+    }
+}
+
+.Container{
+    padding: 4px 116px 8px 116px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1512px;
+    width: 100%;
+}
+
+.LogoBody{
+    width: 70px;
+    height: 68px;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.Logo{
+
+}
+
+.NavbarBody{
+    display: flex;
+    gap: 184px;
+    max-height: 44px;
+}
+
+.Navbar{
+    display: flex;
+    gap: 40px;
+}
+
+.List{
+    list-style-type: none;
+    padding: 10px;
+}
+
+.Item{
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.Right{
+    display: flex;
+    gap: 22px;
+}
+
+.LanguageDropdown{
+    position: relative;
+    width: 72px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    transition: 1s;
+    cursor: pointer;
+    height: 44px;
+}
+
+.LanguageActiveItem{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ActiveTitle{
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    font-family: Poppins;
+}
+
+.LanguageItems{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: absolute;
+    z-index: 2;
+}
+
+.LanguageItem{
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    font-family: Poppins;
+    cursor: pointer;
+}

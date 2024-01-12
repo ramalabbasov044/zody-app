@@ -1,109 +1,109 @@
 
-import styled from 'styled-components'
 import Image from 'next/image'
 import DownloadBox from '../DownloadBox'
+import styles from './style.module.css'
 
 const Footer = () => {
   return (
-    <Wrapper>
-        <Container>
-            <Logo>
+    <footer className={styles.Wrapper}>
+        <div className={styles.Container}>
+            <div className={styles.Logo}>
                 <Image
                     src="/logo/main.svg"
                     alt='logo'
                     width={78}
                     height={75}
                 />  
-            </Logo>
+            </div>
 
-            <FooterColumns>
-                <FooterColumn>
-                    <FooterHeadItem>
+            <div className={styles.FooterColumns}>
+                <div className={styles.FooterColumn}>
+                    <div className={styles.FooterHeadItem}>
                       Features
-                    </FooterHeadItem>
+                    </div>
 
-                    <FooterItem>
+                    <p className={styles.FooterItem}>
                         Astrology
-                    </FooterItem>
-                    <FooterItem>
+                    </p>
+                    <p className={styles.FooterItem}>
                         Match
-                    </FooterItem>
-                    <FooterItem>
+                    </p>
+                    <p className={styles.FooterItem}>
                         Dream Interpretation
-                    </FooterItem>
-                    <FooterItem>
+                    </p>
+                    <p className={styles.FooterItem}>
                         Chat
-                    </FooterItem>
-                    <FooterItem>
+                    </p>
+                    <p className={styles.FooterItem}>
                         Numerology
-                    </FooterItem>
-                    <FooterItem>
+                    </p>
+                    <p className={styles.FooterItem}>
                         Natal chart
-                    </FooterItem>
-                </FooterColumn>
+                    </p>
+                </div>
 
-                <FooterColumnReverse>
-                  <FooterColumn>
-                      <FooterHeadItem>
+                <div className={styles.FooterColumnReverse}>
+                  <div className={styles.FooterColumn}>
+                      <div className={styles.FooterHeadItem}>
                           Help Center
-                      </FooterHeadItem>
+                      </div>
 
-                      <FooterItem>
+                      <p className={styles.FooterItem}>
                           Privacy Policy
-                      </FooterItem>
-                  </FooterColumn>
+                      </p>
+                  </div>
 
-                  <FooterColumn>
-                      <FooterHeadItem>
+                  <div className={styles.FooterColumn}>
+                      <div className={styles.FooterHeadItem}>
                         Blog
-                      </FooterHeadItem>
-                  </FooterColumn>
-                </FooterColumnReverse>
+                      </div>
+                  </div>
+                </div>
                 
 
-                <FooterColumn>
-                    <FooterHeadItem>
+                <div className={styles.FooterColumn}>
+                    <div className={styles.FooterHeadItem}>
                       Features
-                    </FooterHeadItem>
+                    </div>
 
-                    <FooterItem>
+                    <p className={styles.FooterItem}>
                         Astrology
-                    </FooterItem>
-                    <FooterItem>
+                    </p>
+                    <p className={styles.FooterItem}>
                         Match
-                    </FooterItem>
-                    <FooterItem>
+                    </p>
+                    <p className={styles.FooterItem}>
                         Dream Interpretation
-                    </FooterItem>
-                    <FooterItem>
+                    </p>
+                    <p className={styles.FooterItem}>
                         Chat
-                    </FooterItem>
-                    <FooterItem>
+                    </p>
+                    <p className={styles.FooterItem}>
                         Numerology
-                    </FooterItem>
-                    <FooterItem>
+                    </p>
+                    <p className={styles.FooterItem}>
                         Natal chart
-                    </FooterItem>
-                </FooterColumn>
+                    </p>
+                </div>
 
-                <FooterColumn>
-                    <FooterHeadItem>
+                <div className={styles.FooterColumn}>
+                    <div className={styles.FooterHeadItem}>
                       Contact Us
-                    </FooterHeadItem>
+                    </div>
 
-                    <FooterItem>
+                    <p className={styles.FooterItem}>
                       <svg style={{marginRight: "10px"}} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M17 21.25H7C3.35 21.25 1.25 19.15 1.25 15.5V8.5C1.25 4.85 3.35 2.75 7 2.75H17C20.65 2.75 22.75 4.85 22.75 8.5V15.5C22.75 19.15 20.65 21.25 17 21.25ZM7 4.25C4.14 4.25 2.75 5.64 2.75 8.5V15.5C2.75 18.36 4.14 19.75 7 19.75H17C19.86 19.75 21.25 18.36 21.25 15.5V8.5C21.25 5.64 19.86 4.25 17 4.25H7Z" fill="white"/>
                         <path d="M11.9998 12.87C11.1598 12.87 10.3098 12.61 9.65978 12.08L6.52978 9.57997C6.20978 9.31997 6.14978 8.84997 6.40978 8.52997C6.66978 8.20997 7.13978 8.14997 7.45978 8.40997L10.5898 10.91C11.3498 11.52 12.6398 11.52 13.3998 10.91L16.5298 8.40997C16.8498 8.14997 17.3298 8.19997 17.5798 8.52997C17.8398 8.84997 17.7898 9.32997 17.4598 9.57997L14.3298 12.08C13.6898 12.61 12.8398 12.87 11.9998 12.87Z" fill="white"/>
                       </svg>
 
                       info@quantubyte.com
-                    </FooterItem>
+                    </p>
 
-                    <FooterItemLogo>
-                        <Border>
+                    <div className={styles.FooterItemLogo}>
+                        <p className={styles.Border}>
 
-                        </Border>
+                        </p>
 
                         <svg width="213" height="57" viewBox="0 0 213 57" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M4.30551 26.878H2.69551V33.5H1.42151V26.878H0.427507V25.828H1.42151V25.282C1.42151 24.4233 1.64084 23.798 2.07951 23.406C2.52751 23.0047 3.24151 22.804 4.22151 22.804V23.868C3.66151 23.868 3.26484 23.98 3.03151 24.204C2.80751 24.4187 2.69551 24.778 2.69551 25.282V25.828H4.30551V26.878ZM6.92493 27.074C7.14893 26.6353 7.46626 26.2947 7.87693 26.052C8.29693 25.8093 8.8056 25.688 9.40293 25.688V27.004H9.06693C7.63893 27.004 6.92493 27.7787 6.92493 29.328V33.5H5.65093V25.828H6.92493V27.074ZM14.0796 33.626C13.3609 33.626 12.7076 33.4627 12.1196 33.136C11.5409 32.8093 11.0836 32.3473 10.7476 31.75C10.4209 31.1433 10.2576 30.4433 10.2576 29.65C10.2576 28.866 10.4256 28.1753 10.7616 27.578C11.1069 26.9713 11.5736 26.5093 12.1616 26.192C12.7496 25.8653 13.4076 25.702 14.1356 25.702C14.8636 25.702 15.5216 25.8653 16.1096 26.192C16.6976 26.5093 17.1596 26.9667 17.4956 27.564C17.8409 28.1613 18.0136 28.8567 18.0136 29.65C18.0136 30.4433 17.8363 31.1433 17.4816 31.75C17.1363 32.3473 16.6649 32.8093 16.0676 33.136C15.4703 33.4627 14.8076 33.626 14.0796 33.626ZM14.0796 32.506C14.5369 32.506 14.9663 32.3987 15.3676 32.184C15.7689 31.9693 16.0909 31.6473 16.3336 31.218C16.5856 30.7887 16.7116 30.266 16.7116 29.65C16.7116 29.034 16.5903 28.5113 16.3476 28.082C16.1049 27.6527 15.7876 27.3353 15.3956 27.13C15.0036 26.9153 14.5789 26.808 14.1216 26.808C13.6549 26.808 13.2256 26.9153 12.8336 27.13C12.4509 27.3353 12.1429 27.6527 11.9096 28.082C11.6763 28.5113 11.5596 29.034 11.5596 29.65C11.5596 30.2753 11.6716 30.8027 11.8956 31.232C12.1289 31.6613 12.4369 31.9833 12.8196 32.198C13.2023 32.4033 13.6223 32.506 14.0796 32.506ZM28.7747 25.688C29.372 25.688 29.904 25.814 30.3707 26.066C30.8373 26.3087 31.206 26.6773 31.4767 27.172C31.7473 27.6667 31.8827 28.2687 31.8827 28.978V33.5H30.6227V29.16C30.6227 28.3947 30.4313 27.8113 30.0487 27.41C29.6753 26.9993 29.1667 26.794 28.5227 26.794C27.86 26.794 27.3327 27.0087 26.9407 27.438C26.5487 27.858 26.3527 28.4693 26.3527 29.272V33.5H25.0927V29.16C25.0927 28.3947 24.9013 27.8113 24.5187 27.41C24.1453 26.9993 23.6367 26.794 22.9927 26.794C22.33 26.794 21.8027 27.0087 21.4107 27.438C21.0187 27.858 20.8227 28.4693 20.8227 29.272V33.5H19.5487V25.828H20.8227V26.934C21.0747 26.5327 21.4107 26.2247 21.8307 26.01C22.26 25.7953 22.7313 25.688 23.2447 25.688C23.8887 25.688 24.458 25.8327 24.9527 26.122C25.4473 26.4113 25.816 26.836 26.0587 27.396C26.2733 26.8547 26.628 26.4347 27.1227 26.136C27.6173 25.8373 28.168 25.688 28.7747 25.688Z" fill="#936DCE"/>
@@ -152,15 +152,15 @@ const Footer = () => {
                               </clipPath>
                               </defs>
                         </svg>
-                    </FooterItemLogo>
-                </FooterColumn>
+                    </div>
+                </div>
 
-                <FooterColumn>
-                    <FooterHeadItem>
+                <div className={styles.FooterColumn}>
+                    <div className={styles.FooterHeadItem}>
                       Download
-                    </FooterHeadItem>
+                    </div>
 
-                    <DownloadBoxBody>
+                    <div className={styles.DownloadBoxBody}>
                         <DownloadBox
                             path={"/apple/logo/logo.svg"}
                             title={"Zody Horoscope & Dating"}
@@ -172,97 +172,13 @@ const Footer = () => {
                             title={"Zody Horoscope & Dating"}
                             type={"ANDROID"}
                         />
-                    </DownloadBoxBody>
+                    </div >
 
-                </FooterColumn>
-            </FooterColumns>
-        </Container>
-    </Wrapper>
+                </div>
+            </div>
+        </div>
+    </footer>
   )
 }
 
 export default Footer
-
-const Wrapper = styled.footer`
-    width: 100%;
-    border-top: 1px solid #A67DFF;
-    background: #060606;
-    position: relative;
-    z-index: 2;
-    display: flex;
-    justify-content: center;
-`
-
-const Container = styled.div`
-    padding: 46px 60px;
-    display: flex;
-    gap: 54px;
-    justify-content: space-between;
-    max-width: 1392px;
-`
-
-const Logo = styled.div`
-    padding: 31px 51px;
-`
-
-const FooterColumns = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 18px;
-    width: 100%;
-`
-
-const FooterColumn = styled.div`
-    display: flex;
-    flex-direction: column;
-`
-
-const FooterHeadItem = styled.p`
-    padding: 32px 12px;
-    color: #936DCE;
-    font-family: Poppins;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 16px; 
-    letter-spacing: -0.16px;
-`
-
-const FooterItem = styled.p`
-    padding: 13.5px 12px;
-    color: #FFF;
-    font-family: Poppins;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 16px; 
-    letter-spacing: -0.14px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-`
-
-const FooterColumnReverse = styled.div`
-    display: flex;
-    flex-direction: column;
-`
-
-const FooterItemLogo = styled.div`
-    margin-top: 25px;
-    padding: 12px;
-`
-
-const Border = styled.p`
-    height: 1px;
-    max-width: 209px;
-    width: 100%;
-    background: #181818;
-    margin-bottom: 13px;
-`
-
-const DownloadBoxBody = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-`

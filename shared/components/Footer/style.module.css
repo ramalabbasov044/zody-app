@@ -1,0 +1,83 @@
+.Wrapper{
+    width: 100%;
+    border-top: 1px solid #A67DFF;
+    background: #060606;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.Container{
+    padding: 46px 60px;
+    display: flex;
+    gap: 54px;
+    justify-content: space-between;
+    max-width: 1392px;
+}
+
+.Logo{
+    padding: 31px 51px;
+}
+
+.FooterColumns{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 18px;
+    width: 100%;
+}
+
+.FooterColumn{
+    display: flex;
+    flex-direction: column;
+}
+
+.FooterHeadItem{
+    padding: 32px 12px;
+    color: #936DCE;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px; 
+    letter-spacing: -0.16px;
+}
+
+.FooterItem{
+    padding: 13.5px 12px;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 16px; 
+    letter-spacing: -0.14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.FooterColumnReverse{
+    display: flex;
+    flex-direction: column;
+}
+
+.FooterItemLogo{
+    margin-top: 25px;
+    padding: 12px;
+}
+
+.Border{
+    height: 1px;
+    max-width: 209px;
+    width: 100%;
+    background: #181818;
+    margin-bottom: 13px;
+}
+
+.DownloadBoxBody{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
