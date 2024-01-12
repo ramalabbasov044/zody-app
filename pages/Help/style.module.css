@@ -1,0 +1,82 @@
+.Wrapper{
+    position: relative;
+    background: #060606;
+
+}
+
+.BackgroundImage{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.Main{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.BackgroundImage2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.Container{
+    max-width: 1512px;
+    width: 100%;
+    position: relative;
+    padding: 50px 116px 262px 116px;
+    z-index: 3;
+}
+
+.Content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.Tabs{
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    max-width: 294px;
+    width: 100%;
+}
+
+.Border{
+    width: 1px;
+    height: 425px;
+    background: #A67DFF;
+    margin: 4px 40px 0px 39px;
+}
+
+.tabItem{
+    color: #fff;
+    font-family: Poppins;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; 
+    cursor: pointer;
+    margin: 15px 10px;
+}
+.tabItem.active{
+    color: #A67DFF;
+}
+
+.tabAbout{
+
+}
+
+.tabAboutTitle{
+    max-width: 820px;
+    width: 100%;
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%; 
+    margin: 10px;
+}

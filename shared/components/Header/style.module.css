@@ -1,6 +1,6 @@
 .Wrapper{
     position: relative;
-    z-index: 2;
+    z-index: 4;
     display: flex;
     justify-content: center;
 
@@ -35,6 +35,7 @@
     display: flex;
     justify-content: center;
     align-items: center;  
+    cursor: pointer;
 }
 
 .Logo{
