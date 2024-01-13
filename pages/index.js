@@ -20,16 +20,16 @@ export default function Home() {
       <Header />
 
         <img
-          src="/home/bg.svg"
+          src="/home/newBg.svg"
           alt='background'
           className={styles.Background}
         />
 
-        <img
+        {/* <img
           src="/home/bg.svg"
           alt='background'
           className={styles.Background}
-        />
+        /> */}
 
       <main className={styles.Main}>
           <div className={styles.Content}>
