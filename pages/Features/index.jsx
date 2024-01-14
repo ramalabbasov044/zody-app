@@ -19,7 +19,7 @@ const Features = () => {
             <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
             <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
             <script defer>
-                AOS.init();
+                AOS.init()
             </script>
         </Head>
 
@@ -243,6 +243,8 @@ const Features = () => {
             </div>
         </main>
         <Footer />
+      
+        
       </div>
     )
 }

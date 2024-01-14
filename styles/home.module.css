@@ -13,6 +13,7 @@
 
 .Content{
     max-width: 1512px;
+    width: 100%;
 }
 
 .Top{
@@ -20,7 +21,6 @@
     align-items: center;
     justify-content: space-between;
     gap: 98px;
-    position: relative;
     padding: 66px 157px 114px 117px;
 }
 
@@ -36,6 +36,10 @@
 
 .Right{
     position: relative;
+    max-width: 718.94px;
+    max-height: 779.62px;
+    width: 100%;
+    height: 100%;
 }
 
 .TopImage{
@@ -101,4 +105,12 @@
     left: 0px;
     object-fit: cover;
     z-index: 0;
+}
+
+.stonsImage{
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 857px !important;
+    left: 0px !important;
 }

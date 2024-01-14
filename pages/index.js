@@ -34,6 +34,13 @@ export default function Home() {
       <main className={styles.Main}>
           <div className={styles.Content}>
             <div className={styles.Top}>
+                <Image
+                    src="/home/stones/stones.png"
+                    className={styles.stonsImage}
+                    alt=''
+                    width={1512}
+                    height={857}
+                />
                 <div className={styles.Left}>
                   <Image
                       src="/pins/pin1.svg"
@@ -66,8 +73,8 @@ export default function Home() {
                 </div>
 
                 <div className={styles.Right}>
-                    <img
-                        src="/phone/home/phone1.svg"
+                    <Image
+                        src="/phone/home/phone4.png"
                         alt="phone Image"
                         width={664}
                         height={597}
