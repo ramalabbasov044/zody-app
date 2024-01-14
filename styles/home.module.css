@@ -21,6 +21,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 98px;
+    position: relative;
     padding: 66px 157px 114px 117px;
 }
 
@@ -111,6 +112,6 @@
     position: absolute;
     width: 100% !important;
     height: 100% !important;
-    max-height: 857px !important;
     left: 0px !important;
+    max-height: 857px !important;
 }
