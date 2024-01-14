@@ -53,7 +53,7 @@ const Header = () => {
                         </a>
                       </li>
                       <li className={styles.List}>
-                        <a className={styles.Item}>
+                        <a onClick={() => push(Routes.Blog)} className={styles.Item}>
                             {
                                 t('blog')
                             }

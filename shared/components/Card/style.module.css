@@ -1,0 +1,77 @@
+.card{
+    padding: 8px 8px 16px 8px;
+    border-radius: 20px;
+    border: 2px solid var(--purple, #A67DFF);
+    background: rgba(62, 62, 62, 0.40);
+    box-shadow: 0px 4px 22.2px 6px rgba(74, 32, 115, 0.32);
+    cursor: pointer;
+}
+
+.cardImage{
+    width: 274px;
+    height: 211px;  
+    border-radius: 14px;
+}
+
+.cardTitle{
+    color: #C5ABFF;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 145%; 
+    margin-top: 18px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.cardDescription{
+    color: #AEAEAE;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%; 
+    margin-top: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
+    max-width: 258px;
+}
+
+.cardBottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 11px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+
+.readMoreButton{
+    width: 112px;
+    height: 31px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-radius: 1000px;
+    border: 1px solid #A67DFF;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    background: transparent;
+    cursor: pointer;
+}
+
+.cardDate{
+    color: #AEAEAE;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}

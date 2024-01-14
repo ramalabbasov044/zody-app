@@ -33,11 +33,11 @@ export default function Home() {
 
       <main className={styles.Main}>
         <Image
-                src="/home/stones/stones.png"
-                className={styles.stonsImage}
-                alt=''
-                width={1512}
-                height={857}
+            src="/home/stones/stones.png"
+            className={styles.stonsImage}
+            alt=''
+            width={1512}
+            height={857}
         />
           <div className={styles.Content}>
             <div className={styles.Top}>

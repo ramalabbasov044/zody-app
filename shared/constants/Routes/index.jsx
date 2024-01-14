@@ -3,4 +3,5 @@ export const Routes = {
     Help: "/Help",
     Contact: "/Contact",
     Features: "/Features",
+    Product: (id) => "/Blog/" + id
 }

@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "date": " 12 Dec 23",
+        "title": "Iphone 14 pro",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTZufU1bygZxn-A5mhk8QNTCJaTrT924tUCLfBS3sFOQ&s",
+        "description": "Gizliliğiniz önceliğimizdir. Uçtan uca şifreleme ile kişisel mesajlarınızın sizinle gönderdiğiniz kişiler"
+    },
+    {
+        "id": 2,
+        "date": " 12 Dec 23",
+        "description": "Gizliliğiniz önceliğimizdir. Uçtan uca şifreleme ile kişisel mesajlarınızın sizinle gönderdiğiniz kişiler",
+        "title": "Iphone 13 pro",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTZufU1bygZxn-A5mhk8QNTCJaTrT924tUCLfBS3sFOQ&s"
+    },
+    {
+        "id": 3,
+        "date": " 12 Dec 23",
+        "description": "Gizliliğiniz önceliğimizdir. Uçtan uca şifreleme ile kişisel mesajlarınızın sizinle gönderdiğiniz kişiler",
+        "title": "Iphone 12 pro",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTZufU1bygZxn-A5mhk8QNTCJaTrT924tUCLfBS3sFOQ&s"
+    },
+    {
+        "id": 4,
+        "date": " 12 Dec 23",
+        "description": "Gizliliğiniz önceliğimizdir. Uçtan uca şifreleme ile kişisel mesajlarınızın sizinle gönderdiğiniz kişiler",
+        "title": "Iphone 11",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTZufU1bygZxn-A5mhk8QNTCJaTrT924tUCLfBS3sFOQ&s"
+    },
+    {
+        "id": 5,
+        "date": " 12 Dec 23",
+        "description": "Gizliliğiniz önceliğimizdir. Uçtan uca şifreleme ile kişisel mesajlarınızın sizinle gönderdiğiniz kişiler",
+        "title": "Iphone X",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTZufU1bygZxn-A5mhk8QNTCJaTrT924tUCLfBS3sFOQ&s"
+    },
+    {
+        "id": 6,
+        "description": "Gizliliğiniz önceliğimizdir. Uçtan uca şifreleme ile kişisel mesajlarınızın sizinle gönderdiğiniz kişiler",
+        "title": "Iphone 8",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTZufU1bygZxn-A5mhk8QNTCJaTrT924tUCLfBS3sFOQ&s"
+    },
+    {
+        "id": 7,
+        "date": " 12 Dec 23",
+        "description": "Gizliliğiniz önceliğimizdir. Uçtan uca şifreleme ile kişisel mesajlarınızın sizinle gönderdiğiniz kişiler",
+        "title": "Iphone 5",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTZufU1bygZxn-A5mhk8QNTCJaTrT924tUCLfBS3sFOQ&s"
+    }
+]

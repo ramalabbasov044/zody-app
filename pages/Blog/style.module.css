@@ -1,0 +1,122 @@
+.Wrapper{
+    position: relative;
+    z-index: 4;
+}
+
+.Background{
+    width: 100vw !important;
+    height: 100% !important;
+    background: black;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    object-fit: cover;
+    z-index: 1;
+    
+}
+
+.ProductBackground{
+    height: 841px;
+    width: 100vw !important;
+    height: 841px !important;
+    background: black;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.stonesImage{
+    max-width: 1355px !important;
+    width: 100% !important;
+    height: 865px !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.content{
+    padding: 105px 116px 221px 116px;
+    max-width: 1512px;
+    width: 100%;
+}
+
+
+.Main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 3;
+}
+
+.ProductMain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 3;
+    height: 751px;
+}
+
+.productContent{
+    padding: 83px 116px 152px 132px;
+    max-width: 1512px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.productImage{
+    width: 487.531px;
+    height: 479.63px;
+    border-radius: 14px;
+    padding: 18.19px 14.23px;
+    border-radius: 20px;
+    border: 1px solid var(--purple, #A67DFF);
+    box-shadow: 0px 4px 64.4px 14px rgba(74, 32, 115, 0.32);
+}
+
+.productTitle{
+    max-width: 370px;
+    color: #C5ABFF;
+    font-family: Poppins;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 145%; 
+    margin-bottom: 6px;
+}
+
+.productDescription{
+    max-width: 668px;
+    color: #AEAEAE;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%; 
+    margin-bottom: 16px;
+}
+
+.productDate{
+    color: #A67DFF;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.arrow{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    object-fit: contain;
+    position: absolute;
+    transform: translate(-50%,-50%);
+}
