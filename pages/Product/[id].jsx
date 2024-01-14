@@ -34,24 +34,24 @@ const Product = () => {
                     <div className={styles.productDetail}>
                         <p className={styles.productTitle}>
                             {
-                                ProductDetail[0].title
+                                ProductDetail[0] ? ProductDetail[0].title : <></>
                             }
                         </p>
 
                         <p className={styles.productDescription}>
                             {
-                                ProductDetail[0].description
+                                ProductDetail[0] ? ProductDetail[0].description : <></>
                             }
                         </p>
 
                         <p className={styles.productDate}>
                             {
-                                ProductDetail[0].date
+                                ProductDetail[0] ? ProductDetail[0].date : <></>
                             }
                         </p>
                     </div>
                     <img
-                        src={ProductDetail[0].image}
+                        src={ProductDetail[0] ? ProductDetail[0].image : ""}
                         alt='productImage'
                         className={styles.productImage}
                     />
