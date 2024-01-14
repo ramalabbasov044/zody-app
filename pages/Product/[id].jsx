@@ -11,7 +11,6 @@ const Product = () => {
     const { asPath } = useRouter() 
     const CURRENTID = asPath.split("/")[2]
     let ProductDetail = Data.filter((item) => item.id == CURRENTID)
-    console.log(ProductDetail);
 
     return (
         <div>
