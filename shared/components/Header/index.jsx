@@ -6,13 +6,13 @@ import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
 import styles from './style.module.css'
 import { useState } from 'react'
+import { activeLink } from "../../../utils/activeLink";
 
 const Header = () => {
-    const { push } = useRouter()
+    const { push , asPath } = useRouter()
     const [isActive, setIsActive] = useState(false);
     const { t, i18n } = useTranslation();
     const activeLanguage = i18n.language; 
-
     const handleActive = () => {
         setIsActive(!isActive);
     };
@@ -39,28 +39,28 @@ const Header = () => {
               <div className={styles.NavbarBody}>
                   <div className={styles.Navbar}>
                       <li className={styles.List}>
-                        <a onClick={() => push(Routes.Features)} className={styles.Item}>
+                        <a onClick={() => push(Routes.Features)} className={`${styles.Item} ${activeLink(Routes.Features, asPath) ? styles.active : ""}`}>
                             {
                                 t('features')
                             }
                         </a>
                       </li>
                       <li className={styles.List}>
-                        <a onClick={() => push(Routes.Help)} className={styles.Item}>
+                        <a onClick={() => push(Routes.Help)} className={`${styles.Item} ${activeLink(Routes.Help, asPath) ? styles.active : ""}`}>
                             {
                                 t('helpCenter')
                             }
                         </a>
                       </li>
                       <li className={styles.List}>
-                        <a onClick={() => push(Routes.Blog)} className={styles.Item}>
+                        <a onClick={() => push(Routes.Blog)} className={`${styles.Item} ${activeLink(Routes.Blog, asPath) || activeLink("Product",asPath.split("/")[1]) ? styles.active : ""}`}>
                             {
                                 t('blog')
                             }
                         </a>
                       </li>
                       <li className={styles.List}>
-                        <a className={styles.Item}>
+                        <a onClick={() => push(Routes.Contact)} className={`${styles.Item} ${activeLink(Routes.Contact, asPath) ? styles.active : ""}`}>
                             {
                                 t('contact')
                             }

@@ -10,15 +10,12 @@ import Head from 'next/head'
 import Image from 'next/image'
 
 const Features = () => {
-    // AOS.init();
     return (
       <div className={styles.Wrapper}>
         <Head>
           <title>
              Features Page
           </title>
-          {/* <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-          <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> */}
 
         </Head>
 
@@ -38,6 +35,7 @@ const Features = () => {
                   src="/features/stons/stons.svg" 
                   alt="background" 
                   className={styles.BackgroundImage}
+                  data-aos="fade-right"
               />
               <div className={styles.ContentLeft}>
                   <Description
@@ -77,6 +75,7 @@ const Features = () => {
                 src="/features/stons/stons2.svg" 
                 alt="background" 
                 className={styles.BackgroundImage2}
+                data-aos="fade-right"
             />
               <div className={styles.ContentLeft2}>
                   <Description
@@ -123,6 +122,7 @@ const Features = () => {
                   src="/features/stons/stons.svg" 
                   alt="background" 
                   className={styles.BackgroundImage}
+                  data-aos="fade-right"
               />
               <div className={styles.ContentLeft}>
                   <Description
@@ -203,6 +203,7 @@ const Features = () => {
                     src="/features/stons/stons.svg" 
                     alt="background" 
                     className={styles.BackgroundImage}
+                    data-aos="fade-right"
                 />
                 {/* <Image
                     className={styles.starBackground}

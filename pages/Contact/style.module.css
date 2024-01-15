@@ -1,0 +1,156 @@
+.Wrapper{
+    position: relative;
+    z-index: 4;
+    background: black;
+}
+
+.Background{
+    width: 100vw !important;
+    height: 100% !important;
+    background: black;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    object-fit: cover;
+    z-index: 1;
+    
+}
+
+
+.stonesImage{
+    max-width: 1355px !important;
+    width: 100% !important;
+    height: 865px !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.content{
+    padding: 23px 226px 99px 116px;
+    max-width: 1512px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.Main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 3;
+}
+
+.headTitle{
+    color: #A67DFF;
+    font-family: Poppins;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 10px;
+}
+
+.left{
+    margin-top: 95px;
+}
+
+.email{
+    padding: 17.14px;
+    display: flex;
+    align-items: center;
+    margin-top: 31px;
+}
+
+.emailText{
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 22.857px; 
+    letter-spacing: -0.2px;
+}
+
+.followTitle{
+    padding: 45.71px 17.14px;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22.857px; 
+    letter-spacing: -0.35px;
+}
+
+.boxBody{
+    display: flex;
+    cursor: pointer;
+    margin-top: 2.86px;
+    max-height: 56px;
+}
+
+.instagramBox{
+    padding: 10px;
+}
+
+.instagramBox svg{
+    max-width: 36px;
+    max-height: 36px;
+}
+
+.tiktokBox svg{
+    max-width: 30px;
+    max-height: 30px;
+}
+
+.tiktokBox{
+    padding: 13px;
+}
+
+.form{
+    padding: 43px 99px 78px 96px ;
+    border-radius: 20px;
+    border: 2px solid var(--purple, #A67DFF);
+    background: rgba(62, 62, 62, 0.40);
+    box-shadow: 0px 4px 22.2px 6px rgba(74, 32, 115, 0.32);
+}
+
+.formTitle{
+    text-align: center;
+    color: #A67DFF;
+    font-family: Poppins;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 37px;
+}
+
+.inputBody{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sendButton{
+    width: 100%;
+    border: 0;
+    margin-top: 38px;
+    cursor: pointer;
+    padding: 14px;
+    border-radius: 1000px;
+    background: var(--Gradient-3, linear-gradient(95deg, #7537D9 5.72%, #5818BE 96.01%));
+    box-shadow: 0px 4px 14.4px 0px rgba(34, 18, 61, 0.16);
+    color: var(--text-color, #E6D7FF);
+    text-shadow: 4px 8px 24px rgba(51, 94, 247, 0.25);
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
