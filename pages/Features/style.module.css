@@ -17,6 +17,14 @@
     z-index: 0;
 }
 
+.BackgroundImageMixed{
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    object-fit: cover;
+    z-index: 0;
+}
+
 .ContentOne{
     position: relative;
     display: flex;
@@ -103,6 +111,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .SimpleContentRight{
@@ -148,13 +157,35 @@
     align-items: center;
     justify-content: space-between;
     max-width: 1512px;
-    height: 749px;
+    height: 100%;
     width: 100%;
     padding: 163px 79px 162px 116px;
+    z-index: 3;
+}
+
+.mixedImage{
+    max-width: 700px !important;
+    max-height: 715px !important;
+    height: inherit !important;
+    width: 100% !important;
+    object-fit: cover;
+    z-index: 3;
 }
 
 .MixedRight{
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.BottomArrow{
+    position: absolute;
+    height: 24px;
+    bottom: 28px;
+    left: 50%;
+    max-width: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
+    position: absolute;
+    transform: translate(-50%,-50%);
 }
