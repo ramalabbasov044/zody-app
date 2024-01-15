@@ -3,6 +3,10 @@
     z-index: 4;
 }
 
+.ProductWrapper{
+    background-color: black;
+}
+
 .Background{
     width: 100vw !important;
     height: 100% !important;

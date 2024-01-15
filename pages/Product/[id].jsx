@@ -13,15 +13,15 @@ const Product = () => {
     let ProductDetail = Data.filter((item) => item.id == CURRENTID)
 
     return (
-        <div>
+        <div className={styles.ProductWrapper}>
             <Header />
-            <Image
+            {/* <Image
                 src="/home/newBg.svg"
                 alt='background'
                 className={styles.ProductBackground}
                 width={1512}
                 height={0}
-            />
+            /> */}
             <Image
                 src="/blog/stones.svg"
                 alt='background'

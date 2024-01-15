@@ -20,13 +20,13 @@ export default function Blog({ data }) {
     return (
       <div className={styles.Wrapper}>
         <Header />
-          <Image
+          {/* <Image
               src="/home/newBg.svg"
               alt='background'
               className={styles.Background}
               width={1512}
               height={0}
-          />
+          /> */}
 
           <Image
               src="/blog/stones.svg"

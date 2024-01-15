@@ -10,6 +10,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 
 const Features = () => {
+    
     return (
       <div className={styles.Wrapper}>
         <Head>
@@ -18,18 +19,18 @@ const Features = () => {
           </title>
             <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
             <script  src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-            <script >
+            <script>
                 AOS.init()
             </script>
         </Head>
 
-        <Image
+        {/* <Image
             className={styles.starBackground}
             src="/features/stars/stars.svg"
             alt='star'
             width={1512}
             height={1000}
-        />
+        /> */}
 
         <Header />
 
@@ -61,6 +62,7 @@ const Features = () => {
               <Image
                   src="/features/phone/phone1.svg"
                   className={styles.ContentPhoneImage}
+                  data-aos="zoom-out"
                   alt='phone image'
                   width={756}
                   height={612}
@@ -73,9 +75,7 @@ const Features = () => {
                 alt="background" 
                 className={styles.BackgroundImage2}
             />
-              <div  data-aos="fade-up"
-     data-aos-duration="3000"
-                    className={styles.ContentLeft2}>
+              <div className={styles.ContentLeft2}>
                   <Description
                       title={"Match"}
                       margin={"10px"}
@@ -96,7 +96,7 @@ const Features = () => {
               <Image
                   src="/features/phone/phone2.svg"
                   alt='Phone Image'
-                  data-aos="zoom-in"
+                  data-aos="zoom-in-up"
                   width={796}
                   height={566}
                   className={styles.PhoneImageTwo}
@@ -104,13 +104,13 @@ const Features = () => {
           </div>
 
           <div className={styles.ContentOne}>
-                <Image
+                {/* <Image
                     className={styles.starBackground}
                     src="/features/stars/stars.svg"
                     alt='star'
                     width={1512}
                     height={1000}
-                />
+                /> */}
               <img 
                   src="/features/stons/stons.svg" 
                   alt="background" 
@@ -138,6 +138,7 @@ const Features = () => {
               <Image
                   src="/features/phone/phone3.svg"
                   className={styles.SimpleContentPhoneImage}
+                  data-aos="zoom-in-up"
                   alt='phone image'
                   width={756}
                   height={612}
@@ -153,6 +154,7 @@ const Features = () => {
                     width={589}
                     height={625}
                     className={styles.SimpleContentPhoneImage}
+                    data-aos="zoom-in-up"
                 />
                 
                 <div className={styles.SimpleContentRight}>
@@ -183,13 +185,13 @@ const Features = () => {
                     alt="background" 
                     className={styles.BackgroundImage}
                 />
-                <Image
+                {/* <Image
                     className={styles.starBackground}
                     src="/features/stars/stars.svg"
                     alt='star'
                     width={1512}
                     height={1000}
-                />
+                /> */}
                 <div className={styles.SimpleContentReLeft}>
                     <Description
                         title={"Chat"}
@@ -214,13 +216,17 @@ const Features = () => {
                     width={515}
                     height={515}
                     className={styles.phoneImageFive}
+                    data-aos="zoom-in-up"
                 />
             </div>
 
             <div className={styles.MixedContent}>
                 <Image
-                    src=""
-                    alt=''
+                    src="/phone/home/phone6.png"
+                    alt='phone Image'
+                    width={700}
+                    height={715}
+                    data-aos="zoom-in-up"
                 />
                 <div className={styles.MixedRight}>
                     <Description

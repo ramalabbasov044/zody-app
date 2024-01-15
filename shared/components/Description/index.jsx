@@ -12,7 +12,7 @@ const DescriptionC = ({ mwidth , title , margin , size , weight }) => {
     }
 
     return (
-      <p style={DescriptionStyle} className={styles.Description}>
+      <p data-aos="fade-up" data-aos-duration="3000" style={DescriptionStyle} className={styles.Description}>
           {
               title
           }

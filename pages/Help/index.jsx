@@ -26,11 +26,11 @@ const Help = () => {
         <Header />
 
         <main className={styles.Main}>
-            <img 
+            {/* <img 
                 src="/help/bg.svg" 
                 alt="Background" 
                 className={styles.BackgroundImage2}
-            />
+            /> */}
             <div className={styles.Container}>
                 <div className={styles.Content}>
                     <div className={styles.Tabs}>

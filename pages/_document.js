@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-sync-scripts */
 import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
@@ -7,7 +8,7 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
-
+          
       </body>
     </Html>
   )

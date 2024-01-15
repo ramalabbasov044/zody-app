@@ -9,7 +9,7 @@ const TitleComponent = ({ title , size , color , weight , mwidth , margin }) => 
     }
 
     return (
-        <p style={TitleStyle} className={styles.Title}>
+        <p data-aos="fade-up" data-aos-duration="3000" style={TitleStyle} className={styles.Title}>
             {
                 title
             }
