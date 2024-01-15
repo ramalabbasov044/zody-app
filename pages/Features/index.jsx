@@ -10,18 +10,16 @@ import Head from 'next/head'
 import Image from 'next/image'
 
 const Features = () => {
-    
+    // AOS.init();
     return (
       <div className={styles.Wrapper}>
         <Head>
           <title>
              Features Page
           </title>
-            <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-            <script  src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-            <script>
-                AOS.init()
-            </script>
+          {/* <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+          <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> */}
+
         </Head>
 
         {/* <Image
@@ -245,9 +243,7 @@ const Features = () => {
                     </svg>
                 </div>
             </div>
-            
-            
-            
+
             <div className={styles.MixedContent}>
                 <Image
                     src="/phone/home/phone6.png"
@@ -257,6 +253,7 @@ const Features = () => {
                     data-aos="zoom-in-up"
                     className={styles.mixedImage}
                 />
+                
                 <img 
                     src="/features/stons/stons.svg" 
                     alt="background" 
@@ -286,10 +283,14 @@ const Features = () => {
                     </svg>
                 </div>
             </div>
-        </main>
-        <Footer />
-      
+
+
+
+            </main>
+
         
+        
+        <Footer />
       </div>
     )
 }

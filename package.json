@@ -1,5 +1,5 @@
 {
-  "name": "zody-app",
+  "name": "swiper-react-css-mode",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -26,6 +26,5 @@
   "tags": [
     "swiper"
   ],
-  "license": "MIT",
-  "name": "swiper-react-css-mode"
+  "license": "MIT"
 }
