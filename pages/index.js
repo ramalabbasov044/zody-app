@@ -19,11 +19,11 @@ export default function Home() {
 
       <Header />
 
-        <img
+        {/* <img
           src="/home/newBg.svg"
           alt='background'
           className={styles.Background}
-        />
+        /> */}
 
         {/* <img
           src="/home/bg.svg"
@@ -80,6 +80,8 @@ export default function Home() {
                         width={664}
                         height={597}
                         className={styles.TopImage}
+                        data-aos="fade-left"
+                        data-aos-duration="2000"
                     />
 
                     <img
@@ -126,6 +128,8 @@ export default function Home() {
                       src="/phone/home/phone3.svg"
                       alt="phone Image"
                       className={styles.RightImage}
+                      data-aos="fade-right"
+                      data-aos-duration="2000"
                   />
                 </div>
 
