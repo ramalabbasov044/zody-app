@@ -5,7 +5,7 @@ import styles from './style.module.css'
 
 const Footer = () => {
   return (
-    <footer className={styles.Wrapper}>
+    <footer id='footer' className={styles.Wrapper}>
         <div className={styles.Container}>
             <div className={styles.Logo}>
                 <Image
@@ -165,12 +165,15 @@ const Footer = () => {
                             path={"/apple/logo/logo.svg"}
                             title={"Zody Horoscope & Dating"}
                             type={"IOS"}
+                            isAnimation={false}
+
                          />
 
                         <DownloadBox
                             path={"/market/logo/logo.svg"}
                             title={"Zody Horoscope & Dating"}
                             type={"ANDROID"}
+                            isAnimation={false}
                         />
                     </div >
 

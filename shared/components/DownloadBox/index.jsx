@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import styles from './style.module.css'
-const DownloadBox = ({ path , title , type  }) => {
+const DownloadBox = ({ path , title , type , isAnimation  }) => {
   return (
-    <div data-aos="fade-up" data-aos-duration="3000" className={styles.Box}>
+    <div data-aos={isAnimation ? "fade-up" : "none"}  data-aos-duration={isAnimation ? "3000" : "none"} className={styles.Box}>
         <Image
             src={path}
             alt={title}
