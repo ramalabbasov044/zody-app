@@ -140,6 +140,7 @@
     max-height: 556px !important;
     width: 100% !important;
     height: 100% !important;
+    top: 50px;
 }
 
 .SimpleContentRe{
@@ -277,8 +278,8 @@
     max-height: 129px !important;
     width: 100% !important;
     height: 100% !important;
-    left: 10%;
-    top: 3%;
+    left:9%;
+    top: 1%;
 }
 
 .phoneImage{
@@ -289,6 +290,13 @@
     height: 100% !important;
     left: 203px;
     top: 29.5px;
+}
+
+.phoneImageEnd{
+    position: absolute;
+    left: 245px;
+    top: 79.5px;
+    z-index: 4;
 }
 
 .bubbleImage{

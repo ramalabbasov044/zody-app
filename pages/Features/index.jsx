@@ -226,14 +226,12 @@ const Features = () => {
                 className={styles.moonImage}
             />
 
-            <Image
-                src="/features/phone.svg"
-                alt="moon Image"
-                width={0}
-                height={0}
-                className={styles.phoneImage}
+            <img
+                src="/newI.png"
+                alt="phone"
+                className={styles.phoneImageEnd}
                 data-aos="zoom-in"
-                data-aos-duration="2000"
+                data-aos-duration="2500"
             />
             
             <Image
