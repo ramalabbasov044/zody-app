@@ -136,6 +136,10 @@
 .SimpleContentPhoneImage{
     position: relative;
     z-index: 4;
+    max-width: 535px !important;
+    max-height: 556px !important;
+    width: 100% !important;
+    height: 100% !important;
 }
 
 .SimpleContentRe{
@@ -255,4 +259,45 @@
     left: 0;
     bottom: 144px;
     z-index: 3;
+}
+
+.moonImage{
+    position: absolute;
+    max-width: 113px !important;
+    max-height: 118px !important;
+    width: 100% !important;
+    height: 100% !important;
+    left: 42%;
+    top: 100px;
+}
+
+.starImage{
+    position: absolute;
+    max-width: 130px !important;
+    max-height: 129px !important;
+    width: 100% !important;
+    height: 100% !important;
+    left: 10%;
+    top: 3%;
+}
+
+.phoneImage{
+    position: absolute;
+    max-width: 377px !important;
+    max-height: 610px !important;
+    width: 100% !important;
+    height: 100% !important;
+    left: 203px;
+    top: 29.5px;
+}
+
+.bubbleImage{
+    position: absolute;
+    max-width: 377px !important;
+    max-height: 610px !important;
+    width: 100% !important;
+    height: 100% !important;
+    right: 220px;
+    top: 29.5px;
+    z-index: 4;
 }
