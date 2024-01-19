@@ -11,6 +11,7 @@
 
 .input{
     max-width: 361px;
+    min-height: 125px;
     width: 361px;
     padding: 13px 44px 13px 12px;
     border-radius: 10px;
