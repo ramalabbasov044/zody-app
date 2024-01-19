@@ -170,6 +170,12 @@
     line-height: normal;
 }
 
+.sendButton:hover{
+    border-radius: 1000px;
+    background: var(--Gradient-4, linear-gradient(95deg, #5720AD 5.72%, #460CA2 96.01%));
+    box-shadow: 0px 4px 14.4px 0px rgba(34, 18, 61, 0.16);
+}
+
 .characterLength{
     text-align: right;
     color: #7D57CE;

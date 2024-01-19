@@ -15,10 +15,22 @@
 }
 
 .swiper-button-next {
+    width: 44px !important;
+    height: 44px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     right: 57px;
+    position: absolute;
     top: 39%;
     background-image: url(./arrows/next.svg);
     background-repeat: no-repeat;
+    background-position: center;
+}
+
+.swiper-button-next:hover{
+    border-radius: 1000px;
+    background-color: rgba(50, 50, 50, 0.60);
 }
 
 .swiper-button-next::after {
@@ -26,11 +38,22 @@
 }
 
 .swiper-button-prev {
+    width: 44px !important;
+    height: 44px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     left: 57px;
     position: absolute;
     top: 39%;
     background-image: url(./arrows/prev.svg);
     background-repeat: no-repeat;
+    background-position: center;
+}
+
+.swiper-button-prev:hover{
+    border-radius: 1000px;
+    background-color: rgba(50, 50, 50, 0.60);
 }
 
 .swiper-button-prev::after {
