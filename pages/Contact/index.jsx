@@ -18,13 +18,17 @@ function Contact() {
         userEmail: "",
         userDescription: "",
     });
+   
     const handleInputChange = (name, value) => {
-      setFormData((prevData) => ({
-        ...prevData,
-        [name]: value,
-      }));
+      if (name === "userDescription" && value.length > 200) {
+        toast.error("description uzunlugu maksimum 200 ola biler");
+      } else {
+        setFormData((prevData) => ({
+          ...prevData,
+          [name]: value,
+        }));
+      }
     };
-
     const sendData = () => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -178,6 +182,10 @@ function Contact() {
                               value={formData.userDescription}
                               onInputChange={handleInputChange}
                           />
+
+                          <div className={styles.characterLength}>
+                            {formData.userDescription.length}/200
+                          </div>
                       </div>
 
                       <button onClick={sendData} className={styles.sendButton}>
