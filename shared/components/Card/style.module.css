@@ -67,6 +67,12 @@
     cursor: pointer;
 }
 
+.readMoreButton:hover{
+    background: #A67DFF;
+    border: none;
+    color: #FFF;
+}
+
 .cardDate{
     color: #AEAEAE;
     font-family: Poppins;

@@ -23,14 +23,15 @@ const Help = () => {
             className={styles.BackgroundImage}
         />
 
+        <img
+            src="/stars.png"
+            alt='background'
+            className={styles.Background}
+        /> 
+
         <Header />
 
         <main className={styles.Main}>
-            {/* <img 
-                src="/help/bg.svg" 
-                alt="Background" 
-                className={styles.BackgroundImage2}
-            /> */}
             <div className={styles.Container}>
                 <div className={styles.Content}>
                     <div className={styles.Tabs}>

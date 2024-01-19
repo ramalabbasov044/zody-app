@@ -3,11 +3,23 @@
     background: #060606;
 }
 
+.Background{
+    max-width: 100vw !important;
+    width: 100% !important;
+    height: 1728px !important;
+    background: black;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    object-fit: cover;
+}
+
 .BackgroundImage{
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 2;
 }
 
 .Main{

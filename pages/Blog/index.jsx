@@ -14,19 +14,19 @@ import Image from 'next/image'
 
 export default function Blog({ data }) {
     const { push } = useRouter()
+
     const callBackId = (id) => {
       push(Routes.Product(id))
     } 
+
     return (
       <div className={styles.Wrapper}>
         <Header />
-          {/* <Image
-              src="/home/newBg.svg"
+          <img
+              src="/stars.png"
               alt='background'
               className={styles.Background}
-              width={1512}
-              height={0}
-          /> */}
+          /> 
 
           <Image
               src="/blog/stones.svg"
@@ -37,29 +37,30 @@ export default function Blog({ data }) {
           />
           
           <main className={styles.Main}>
-              <div className={styles.content}>
-                <Swiper
-                    spaceBetween={37}
-                    slidesPerView={4}
-                    loop={true}
-                    pagination={{
-                      clickable: true,
-                    }}
-                    navigation={true}
-                    modules={[Pagination, Navigation]}
-                    className="mySwiper"
-                >
-                    {
-                      data.map((item) => (
-                        <SwiperSlide key={item.id}>
-                            <Card 
-                                detail={item} 
-                                callBackId={callBackId}
-                            />
-                        </SwiperSlide>
-                      ))
-                    }
-                </Swiper>
+              <div className={styles.content}>                
+                    <Swiper
+                        spaceBetween={37}
+                        slidesPerView={4}
+                        loop={true}
+                        pagination={{
+                          clickable: true,
+                        }}
+                        navigation={true}
+                        modules={[Pagination, Navigation]}
+                        className="mySwiper"
+                    >
+
+                        {
+                          data.map((item) => (
+                            <SwiperSlide key={item.id}>
+                                <Card 
+                                    detail={item} 
+                                    callBackId={callBackId}
+                                />
+                            </SwiperSlide>
+                          ))
+                        }
+                    </Swiper>
               </div>
           </main>
         <Footer />

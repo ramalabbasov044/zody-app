@@ -21,13 +21,30 @@ const Features = () => {
 
         </Head>
 
-        {/* <Image
-            className={styles.starBackground}
-            src="/features/stars/stars.svg"
-            alt='star'
-            width={1512}
-            height={1000}
-        /> */}
+        <img
+            // width={0}
+            // height={0}
+            src="/stars.png"
+            alt='background'
+            className={styles.Background}
+        /> 
+
+
+        <img
+            // width={0}
+            // height={0}
+            src="/stars.png"
+            alt='background'
+            className={styles.Background2}
+        /> 
+
+        <img
+            // width={0}
+            // height={0}
+            src="/stars.png"
+            alt='background'
+            className={styles.Background3}
+        /> 
 
         <Header />
 

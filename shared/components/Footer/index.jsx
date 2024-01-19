@@ -59,32 +59,6 @@ const Footer = () => {
                       </div>
                   </div>
                 </div>
-                
-
-                <div className={styles.FooterColumn}>
-                    <div className={styles.FooterHeadItem}>
-                      Features
-                    </div>
-
-                    <p className={styles.FooterItem}>
-                        Astrology
-                    </p>
-                    <p className={styles.FooterItem}>
-                        Match
-                    </p>
-                    <p className={styles.FooterItem}>
-                        Dream Interpretation
-                    </p>
-                    <p className={styles.FooterItem}>
-                        Chat
-                    </p>
-                    <p className={styles.FooterItem}>
-                        Numerology
-                    </p>
-                    <p className={styles.FooterItem}>
-                        Natal chart
-                    </p>
-                </div>
 
                 <div className={styles.FooterColumn}>
                     <div className={styles.FooterHeadItem}>

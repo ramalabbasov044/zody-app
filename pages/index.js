@@ -27,11 +27,16 @@ export default function Home() {
           className={styles.Background}
         /> */}
 
-        {/* <img
-          src="/home/bg.svg"
-          alt='background'
-          className={styles.Background}
-        /> */}
+        <img
+            // width={0}
+            // height={0}
+            src="/stars.png"
+            alt='background'
+            className={styles.Background}
+        /> 
+
+
+        
 
       <main className={styles.Main}>
         <Image

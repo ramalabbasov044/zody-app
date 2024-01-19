@@ -124,3 +124,15 @@
     position: absolute;
     transform: translate(-50%,-50%);
 }
+
+.Background{
+    max-width: 100vw !important;
+    width: 100% !important;
+    height: 1728px !important;
+    background: black;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    object-fit: cover;
+    z-index: 0;
+}

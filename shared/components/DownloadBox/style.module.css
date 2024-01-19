@@ -5,9 +5,17 @@
     gap: 12px;
     border-radius: 20px;
     border: 1px solid #FFD336;
-    background: var(--Purple-2, #6032C6);
-    box-shadow: 0px 1px 20px 7px rgba(32, 14, 63, 0.16);
     background: radial-gradient(56.08% 56.08% at 50% 50%, #2C135B 36.5%, rgba(51, 25, 99, 0.92) 82%, rgba(59, 32, 108, 0.93) 100%);
+    background-color: #6032C6;
+    box-shadow: 0px 1px 10.8px 7px rgba(232, 208, 0, 0.19);
+}
+
+.Box:hover{
+    border-radius: 20px;
+    border: 1px solid #FFD336;
+    background: #6032C6;
+    box-shadow: 0px 1px 10.8px 7px rgba(232, 208, 0, 0.19);
+    background-color: #270F53;
 }
 
 .About{

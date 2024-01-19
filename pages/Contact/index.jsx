@@ -51,13 +51,11 @@ function Contact() {
         <ToastContainer />
 
         <Header />
-          {/* <Image
-              src="/home/newBg.svg"
-              alt='background'
-              className={styles.Background}
-              width={1512}
-              height={0}
-          /> */}
+            <img
+                src="/stars.png"
+                alt='background'
+                className={styles.Background}
+            /> 
 
           <Image
               src="/blog/stones.svg"

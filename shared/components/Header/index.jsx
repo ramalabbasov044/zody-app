@@ -7,13 +7,14 @@ import { useRouter } from 'next/router'
 import styles from './style.module.css'
 import { useState } from 'react'
 import { activeLink } from "../../../utils/activeLink";
+import Head from 'next/head'
 
 const Header = () => {
     const { push , asPath } = useRouter()
     const [isActive, setIsActive] = useState(false);
     const { t, i18n } = useTranslation();
     const activeLanguage = i18n.language; 
-    const handleActive = () => {
+    const handleActive = (e) => {
         setIsActive(!isActive);
     };
 
@@ -39,28 +40,28 @@ const Header = () => {
               <div className={styles.NavbarBody}>
                   <div className={styles.Navbar}>
                       <li className={styles.List}>
-                        <a onClick={() => push(Routes.Features)} className={`${styles.Item} ${activeLink(Routes.Features, asPath) ? styles.active : ""}`}>
+                        <a onClick={() => push(Routes.Features)} style={{fontFamily: i18n.language == "ru" ? "Montserrat" : "Poppins"}} className={`${styles.Item} ${activeLink(Routes.Features, asPath) ? styles.active : ""}`}>
                             {
                                 t('features')
                             }
                         </a>
                       </li>
                       <li className={styles.List}>
-                        <a onClick={() => push(Routes.Help)} className={`${styles.Item} ${activeLink(Routes.Help, asPath) ? styles.active : ""}`}>
+                        <a onClick={() => push(Routes.Help)} style={{fontFamily: i18n.language == "ru" ? "Montserrat" : "Poppins"}}  className={`${styles.Item} ${activeLink(Routes.Help, asPath) ? styles.active : ""}`}>
                             {
                                 t('helpCenter')
                             }
                         </a>
                       </li>
                       <li className={styles.List}>
-                        <a onClick={() => push(Routes.Blog)} className={`${styles.Item} ${activeLink(Routes.Blog, asPath) || activeLink("Product",asPath.split("/")[1]) ? styles.active : ""}`}>
+                        <a onClick={() => push(Routes.Blog)} style={{fontFamily: i18n.language == "ru" ? "Montserrat" : "Poppins"}}  className={`${styles.Item} ${activeLink(Routes.Blog, asPath) || activeLink("Product",asPath.split("/")[1]) ? styles.active : ""}`}>
                             {
                                 t('blog')
                             }
                         </a>
                       </li>
                       <li className={styles.List}>
-                        <a onClick={() => push(Routes.Contact)} className={`${styles.Item} ${activeLink(Routes.Contact, asPath) ? styles.active : ""}`}>
+                        <a onClick={() => push(Routes.Contact)} style={{fontFamily: i18n.language == "ru" ? "Montserrat" : "Poppins"}}  className={`${styles.Item} ${activeLink(Routes.Contact, asPath) ? styles.active : ""}`}>
                             {
                                 t('contact')
                             }
@@ -69,7 +70,7 @@ const Header = () => {
                   </div>
 
                   <div className={styles.Right}>
-                      <div onClick={handleActive} className={`${styles.LanguageDropdown}  ${isActive ? `${styles.dropdownActive}`: ""}`} >
+                      <div onClick={(e) => handleActive(e)} className={`${styles.LanguageDropdown}  ${isActive ? `${styles.dropdownActive}`: ""}`} >
                           <div className={`${styles.LanguageActiveItem} ${isActive ? `${styles.languageActiveItem}`: ""}`} >
                                 <p className={styles.ActiveTitle}>
                                     {
@@ -93,13 +94,15 @@ const Header = () => {
                             {
                                 isActive ? (
                                     <div className={`${styles.LanguageItems} ${isActive ? `${styles.itemsActive}` : ""}`}>
-                                        {languages.map(lng => (
-                                            <p className={styles.LanguageItem} key={lng} onClick={() => changeLanguage(lng)}>
-                                                {lng}
-                                            </p>
-                                        ))}
+                                        {
+                                            languages.map(lng => (
+                                                <p className={styles.LanguageItem} key={lng} onClick={() => changeLanguage(lng)}>
+                                                    {lng}
+                                                </p>
+                                            ))
+                                        }
                                     </div>
-                                ) : <></>
+                                ) : null    
                             }
                       </div>
 
