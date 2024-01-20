@@ -4,3 +4,9 @@
     line-height: 130%;
 }
 
+@media screen and (max-width:1350px){
+    .Description{
+        font-size: 35px !important;
+        font-weight: 500 !important;
+    }
+}

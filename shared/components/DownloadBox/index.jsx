@@ -11,17 +11,17 @@ const DownloadBox = ({ path , title , type , isAnimation  }) => {
         />
 
         <div className={styles.About}>
-            <div className={styles.Title}>
+            <p className={styles.Title}>
                 {
                     title
                 }
-            </div>
+            </p>
 
-            <div className={styles.Type}>
+            <p className={styles.Type}>
                 {
                     type
                 }
-            </div>
+            </p>
         </div>
     </div>
   )

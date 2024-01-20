@@ -122,3 +122,126 @@
     font-family: Poppins;
     cursor: pointer;
 }
+
+.Menu{
+    display: none;
+}
+
+
+.mobileContainer{
+    position: fixed;
+    width:91%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: #7D57CE;
+    box-shadow: 24px 0px 16px 0px rgba(24, 23, 92, 0.18);
+    transition: 1s;
+    z-index: 3;
+}
+
+.mobileHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px 0px 16px;    
+}
+
+.closeButton{
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.blackBackground{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.NavbarActive{
+    display: flex !important;
+    max-height: 100% !important;
+    width: 100% !important;
+}
+
+.NavbarItemActive {
+    flex-direction: column !important;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100% !important;
+    gap: 0px !important;
+}
+
+.mobileContent{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+}
+
+.ListActive{
+    text-align: center !important;
+    padding: 21.5px 40px;
+}
+
+
+
+.LanguageDropdownMobil{
+    
+}
+
+@media screen and (max-width:1350px){
+    .NavbarBody{
+        gap: 90px;
+    }
+}
+
+@media screen and (max-width:1135px){
+    .NavbarBody{
+        gap: 15px;
+    }
+    .Navbar{
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width:992px){
+    .Container{
+        padding: 11px 68px 11px 68px;
+    }
+    .Logo{
+        width: 48px;
+        height: 46px;
+    }
+    .Item{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width:769px){
+    .Container{
+        padding: 8px 9px 5px 16px;
+    }
+    .NavbarBody{
+        display: none;
+    }
+    .LogoBody{
+        width: 38px;
+        height: 40px;
+    }
+    .Logo{
+        width: 30px;
+        height: 30px;
+    }
+    .Menu{
+        display: flex;
+        cursor: pointer;
+    }
+}

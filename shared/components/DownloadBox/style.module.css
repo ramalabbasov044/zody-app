@@ -1,7 +1,8 @@
 .Box{
     cursor: pointer;
     padding: 16px 21px 16px 18px;
-    display: flex;
+    display: flex !important;
+    flex-direction: row !important;
     gap: 12px;
     border-radius: 20px;
     border: 1px solid #FFD336;
@@ -21,6 +22,8 @@
 .About{
     display: flex;
     flex-direction: column;
+    justify-content: start !important;
+    align-items: flex-start !important;
     gap: 3.94px;    
 }
 
@@ -31,6 +34,7 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    text-align: left !important;
 }
 
 .Type{
@@ -40,4 +44,25 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    text-align: left !important;
+    align-items: self-start;
+}
+
+@media screen and (max-width:769px){
+    .Title{
+        font-size: 9px !important;
+    }
+    .Type{
+        font-size: 16px !important;
+    }
+    .Box{
+        width: 100%;
+        border-radius: 18.696px;
+        border: 1.764px solid #5D319D;
+        background: rgba(166, 125, 255, 0.10);
+        box-shadow: 0px 0.935px 9.348px 0.935px rgba(13, 13, 13, 0.77) inset;
+    }
+    .About{
+        width: fit-content !important;
+    }
 }

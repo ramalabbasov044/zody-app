@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }) {
   useEffect(() => {
     AOS.init({
          once: false,
-       })
+    })
  }, [])
   return <Component {...pageProps} />
 }

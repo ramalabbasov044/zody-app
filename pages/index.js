@@ -21,12 +21,6 @@ export default function Home() {
 
       <Header />
 
-        {/* <img
-          src="/home/newBg.svg"
-          alt='background'
-          className={styles.Background}
-        /> */}
-
         <img
             // width={0}
             // height={0}
@@ -35,26 +29,24 @@ export default function Home() {
             className={styles.Background}
         /> 
 
-
-        
-
       <main className={styles.Main}>
         <Image
             src="/home/stones/stones.png"
             className={styles.stonsImage}
+            data-depth="0.50"
             alt=''
             width={1512}
             height={857}
         />
           <div className={styles.Content}>
             <div className={styles.Top}>
-                
                 <div className={styles.Left}>
                   <Image
                       src="/pins/pin1.svg"
                       alt="pin"
                       width={166}
                       height={65}
+                      className={styles.VectorImage}
                   />
 
                   <Description

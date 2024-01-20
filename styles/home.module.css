@@ -9,6 +9,7 @@
     position: relative;
     z-index: 1;
     display: flex;
+    height: 1600px;
     justify-content: center;
 }
 
@@ -25,10 +26,6 @@
     padding: 66px 157px 114px 117px;
 }
 
-.Left{
-
-}
-
 .DownloadBoxBody{
     display: flex;
     gap: 16px;
@@ -37,8 +34,8 @@
 
 .Right{
     position: relative;
-    max-width: 718.94px;
-    max-height: 779.62px;
+    max-width: 664px;
+    max-height: 597px;
     width: 100%;
     height: 100%;
 }
@@ -116,4 +113,112 @@
     height: 100% !important;
     left: 0px !important;
     max-height: 857px !important;
+}
+
+
+
+@media screen and (max-width:1440px){
+    .TopImage{
+        max-width: 551px;
+        max-height: 509px;
+    }
+
+    .Right{
+        max-width: 551px;
+        max-height: 509px;
+    }
+}
+
+@media screen and (max-width:1350px){
+    .Top{
+        padding: 66px 42px 114px 117px;
+    }
+    .Bottom{
+        padding: 73px 50px 34px 116px;
+    }
+}
+
+@media screen and (max-width:1250px){
+    .Top{
+        flex-direction: column-reverse;
+    }
+    .Top div{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+    .DownloadBoxBody{
+        display: flex;
+        flex-direction: row !important;
+        max-width: 472px !important;
+    }
+    .Bottom{
+        flex-direction: column;
+    }
+    .Bottom div p{
+        text-align: center;
+    }
+    .Bottom div:not(:nth-child(0)){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .Main{
+        height: 100%;
+    }
+    .Right{
+        max-width: 629px;
+        max-height: 682px;
+        margin-top: 50px;
+    }
+    .RightImage{
+        max-width: 629px;
+        max-height: 682px;
+    }
+    .TopImage{
+        max-width: 629px;
+        max-height: 682px;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width:769px){
+    .Top{
+        padding: 21px 27px 80px 27px;
+    }
+    .TopImage{
+        max-width: 317px;
+        max-height: 301px;
+    }
+    .DownloadBoxBody{
+        max-width: 273px !important;
+        flex-direction: column !important;
+    }
+    .Top div p{
+        font-size: 32px ;
+    }
+    .VectorImage{
+        display: none;
+    }
+    .Vector{
+        display: none;
+    }
+    .Vector2{
+        display: none;
+    }
+    .BottomArrow{
+        display: none !important;
+    }
+    .Bottom{
+        padding: 21px 30px 80px 30px;
+    }
+    .RightImage{
+        max-width: 327px;
+        max-height: 354px;
+    }
 }
