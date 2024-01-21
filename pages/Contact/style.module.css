@@ -185,3 +185,70 @@
     font-weight: 400;
     line-height: 150%
 }
+
+@media screen and (max-width: 1440px){
+    .content{
+        padding: 23px 107px 99px 116px;
+    }
+}
+
+@media screen and (max-width: 1100px){
+    .content{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 50px
+    }
+
+    .Main{
+        height: 100%;
+    }
+
+    .left{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 33px;
+    }
+
+    .form{
+        max-width: 556px;
+    }
+}
+
+@media screen and (max-width: 769px){
+    .content{
+        flex-direction: column-reverse;
+    }
+
+    .form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 23px 25px 24px;
+    }
+
+    .form div div{
+        width: 307px;
+        height: 46px;
+    }
+
+    .form input{
+        width: 307px;
+        height: 46px;
+    }
+
+    .form textarea{
+        width: 307px;
+    }
+
+    .form .inputBody{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

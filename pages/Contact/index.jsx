@@ -8,7 +8,7 @@ import styles from './style.module.css'
 import { ToastContainer, toast } from 'react-toastify';
 import Image from 'next/image'
 import { useState } from 'react'
-
+// 107 116
 function Contact() {
     const [instagramHover,setInstagramHover] = useState(false)
     const [tiktokHover,setTiktokHover] = useState(false)
