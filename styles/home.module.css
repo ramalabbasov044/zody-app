@@ -16,9 +16,11 @@
 .Content{
     max-width: 1512px;
     width: 100%;
+    position: relative;
 }
 
 .Top{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -107,15 +109,30 @@
     z-index: 0;
 }
 
-.stonsImage{
+.stonsImage {
     position: absolute;
     width: 100% !important;
     height: 100% !important;
     left: 0px !important;
     max-height: 857px !important;
+    top: 0px;
 }
 
+.stoneImageOne{
+    position: absolute;
+    top: 118px;
+    left: 0;
+    width: 88px;
+    height: 94px;
+}
 
+.stoneImageThree{
+    position: absolute;
+    top: 637px;
+    right: 82px;
+    width: 157px;
+    height: 72px;
+}
 
 @media screen and (max-width:1440px){
     .TopImage{

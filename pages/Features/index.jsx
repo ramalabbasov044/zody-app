@@ -203,7 +203,7 @@ const Features = () => {
                         data-aos-duration="2000"
                         width={515}
                         height={515}
-                        className={styles.phoneBackground}
+                        className={styles.phoneBackground2}
                     />
                 <Image
                         src="/features/phone/iphone.svg"

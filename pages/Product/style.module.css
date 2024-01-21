@@ -7,18 +7,6 @@
     background-color: black;
 }
 
-.Background{
-    width: 100vw !important;
-    height: 100% !important;
-    background: black;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    object-fit: cover;
-    z-index: 1;
-    
-}
-
 .ProductBackground{
     height: 841px;
     width: 100vw !important;
@@ -78,10 +66,7 @@
 .productImage{
     width: 487.531px;
     height: 479.63px;
-    border-radius: 14px;
-    padding: 18.19px 14.23px;
     border-radius: 20px;
-    border: 1px solid var(--purple, #A67DFF);
     box-shadow: 0px 4px 64.4px 14px rgba(74, 32, 115, 0.32);
 }
 
@@ -128,11 +113,47 @@
 .Background{
     max-width: 100vw !important;
     width: 100% !important;
-    height: 1728px !important;
+    height: 831px !important;
     background: black;
     position: absolute;
     top: 0px;
     left: 0px;
     object-fit: cover;
     z-index: 0;
+}
+
+.productImgBody{
+    border: 1px solid var(--purple, #A67DFF);
+    padding: 11px 10px;
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 1254px){
+    .productContent{
+        gap: 20px;
+    }
+    .productImage{
+        width: 300.531px;
+        height: 300.63px;
+    }
+}
+
+@media screen and (max-width: 992px){
+    .productContent{
+        flex-direction: column-reverse;
+        justify-content: flex-start;
+    }
+    .productImage{
+        width:510px;
+        height: 310.63px;
+    }
+}
+
+@media screen and (max-width: 769px){
+    .productImage{
+        width: 100%;
+    }
+    .productContent {
+        padding: 0px 16px;
+    }
 }

@@ -15,6 +15,7 @@ const Product = () => {
     return (
         <div className={styles.ProductWrapper}>
             <Header />
+
             <img
                 src="/stars.png"
                 alt='background'
@@ -27,6 +28,7 @@ const Product = () => {
                 width={1512}
                 height={0}
             />
+
             <main className={styles.ProductMain}>
                 <div className={styles.productContent}>
                     <div className={styles.productDetail}>
@@ -48,11 +50,13 @@ const Product = () => {
                             }
                         </p>
                     </div>
-                    <img
-                        src={ProductDetail[0] ? ProductDetail[0].image : ""}
-                        alt='productImage'
-                        className={styles.productImage}
-                    />
+                    <div className={styles.productImgBody}>
+                        <img
+                            src={ProductDetail[0] ? ProductDetail[0].image : ""}
+                            alt='productImage'
+                            className={styles.productImage}
+                        />
+                    </div>
                 </div>
             </main>
             

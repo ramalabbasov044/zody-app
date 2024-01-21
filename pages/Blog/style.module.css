@@ -134,3 +134,27 @@
     left: 0px;
     object-fit: cover;
 }
+
+.mobilContent{
+    display: none;
+}
+
+.mobilContent{
+    padding: 39px 16px;
+}
+
+.mobileCardBody{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+
+@media screen and (max-width: 769px){
+    .content{
+        display: none;
+    }
+    .mobilContent{
+        display: flex;
+    }
+}

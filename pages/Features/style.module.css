@@ -214,6 +214,15 @@
     left: 0px;
 }
 
+.phoneBackground2{
+    max-width: 994px;
+    max-height: 566px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right: 0px;
+}
+
 
 .simplePhone{
     max-width: 312px;
