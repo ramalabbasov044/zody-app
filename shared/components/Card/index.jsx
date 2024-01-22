@@ -22,18 +22,18 @@ const Card = ({ detail , callBackId }) => {
 
           <p className={styles.cardDescription}>
               {
-                detail.description
+                detail.desc
               }
           </p>
 
           <div className={styles.cardBottom}>
-              <button onClick={() => callBackId(detail.id)} className={styles.readMoreButton}>
+              <button onClick={() => callBackId(detail.slug)} className={styles.readMoreButton}>
                 Read More
               </button>
 
               <div className={styles.cardDate}>
                   {
-                    detail.date
+                    detail.created_at
                   }
               </div>
           </div>

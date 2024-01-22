@@ -1,16 +1,35 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @next/next/no-img-element */
 import Footer from '@/shared/components/Footer'
 import Header from '@/shared/components/Header'
-import Data from '../../mock/data/data.json'
 import styles from './style.module.css'
 
+import { getBlogItem } from '../../services/index'
+import { useTranslation } from 'react-i18next'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 
-const Product = () => {
-    const { asPath } = useRouter() 
-    const CURRENTID = asPath.split("/")[2]
-    let ProductDetail = Data.filter((item) => item.id == CURRENTID)
+export default function Product () {
+    const [productDetail, setProductDetail] = useState([])
+    const { i18n } = useTranslation()
+    const router = useRouter()
+    const CURRENTID = typeof window !== 'undefined' ? router.asPath.split("/")[2] : null
+  
+    const getDetail = async () => {
+        try {
+            const response = await getBlogItem(CURRENTID, i18n.language)
+            setProductDetail(response.data.data)
+        } catch (error) {
+            console.log({ error })
+        }
+    }
+  
+    useEffect(() => {
+      if (CURRENTID) {
+        getDetail()
+      }
+    }, [i18n.language, CURRENTID])
 
     return (
         <div className={styles.ProductWrapper}>
@@ -30,39 +49,45 @@ const Product = () => {
             />
 
             <main className={styles.ProductMain}>
-                <div className={styles.productContent}>
-                    <div className={styles.productDetail}>
-                        <p className={styles.productTitle}>
-                            {
-                                ProductDetail[0] ? ProductDetail[0].title : <></>
-                            }
-                        </p>
+                {
+                    productDetail.length == 0 ? (
+                        <span className={styles.loader}>
+                            Loading
+                        </span>
+                    ) : (
+                        <div className={styles.productContent}>
+                            <div className={styles.productDetail}>
+                                <p className={styles.productTitle}>
+                                    {
+                                        productDetail ? productDetail.title : <></>
+                                    }
+                                </p>
 
-                        <p className={styles.productDescription}>
-                            {
-                                ProductDetail[0] ? ProductDetail[0].description : <></>
-                            }
-                        </p>
+                                <p className={styles.productDescription}>
+                                    {
+                                        productDetail ? productDetail.content : <></>
+                                    }
+                                </p>
 
-                        <p className={styles.productDate}>
-                            {
-                                ProductDetail[0] ? ProductDetail[0].date : <></>
-                            }
-                        </p>
-                    </div>
-                    <div className={styles.productImgBody}>
-                        <img
-                            src={ProductDetail[0] ? ProductDetail[0].image : ""}
-                            alt='productImage'
-                            className={styles.productImage}
-                        />
-                    </div>
-                </div>
+                                <p className={styles.productDate}>
+                                    {
+                                        productDetail ? productDetail.created_at : <></>
+                                    }
+                                </p>
+                            </div>
+                            <div className={styles.productImgBody}>
+                                <img
+                                    src={productDetail ? productDetail.image : ""}
+                                    alt='productImage'
+                                    className={styles.productImage}
+                                />
+                            </div>
+                        </div>
+                    )
+                }
             </main>
             
             <Footer />
         </div>
     )
 }
-
-export default Product

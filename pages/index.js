@@ -9,27 +9,38 @@ import styles from '../styles/home.module.css'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Head from 'next/head'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function Home() {
   const { push } = useRouter()
+  const [moveAmount, setMoveAmount] = useState(0);
 
   useEffect(() => {
-        const handleScroll = () => {
-        const scrollPosition = window.scrollY;
-        const imageElement = document.querySelector('#stoneImage');
+    let prevScrollY = 0;
 
-            if (imageElement) {
-                const moveAmount = scrollPosition * 0.5;
-                imageElement.style.top = moveAmount + 'px';
-            }
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const scale = scrollPosition > prevScrollY ? 1.2 : 1;
+      const newMoveAmount = scrollPosition * 0.1;
 
+      // Update the top and transform properties based on scroll position
+      const imageElements = document.querySelectorAll('.stoneImage');
+
+      imageElements.forEach((imageElement) => {
+        imageElement.style.transform = `scale(${scale})`;
+        imageElement.style.transition = '.4s';
+      });
+
+      prevScrollY = scrollPosition;
+      setMoveAmount(newMoveAmount);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
     return (
         <div className={styles.Wrapper}>
@@ -63,21 +74,22 @@ export default function Home() {
                     <div className={styles.Top}>
                         <img
                             src="/home/group/stone.png"
-                            className={styles.stoneImageOne}
-                            alt=''
+                            className={`stoneImage ${styles.stoneImageOne}`}
+                            alt=""
                             width={0}
                             height={0}
-                            id='stoneImage'
+                            style={{ bottom: `${moveAmount + 118}px` }}
                         />
 
                         <img
                             src="/home/group/stone3.png"
-                            className={styles.stoneImageThree}
-                            alt=''
+                            className={`stoneImage ${styles.stoneImageThree}`}
+                            alt=""
                             width={0}
                             height={0}
-                            id='stoneImage2'
+                            style={{ bottom: `${moveAmount + 451}px` }}
                         />
+
 
                         <div className={styles.Left}>
                         <Image

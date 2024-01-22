@@ -50,49 +50,59 @@ const Features = () => {
 
         <main className={styles.Main}>
           <div className={styles.ContentOne}>
-              <img 
-                    src="/features/stons/stons.svg" 
-                    alt="background"
-                    className={styles.BackgroundImage}
-                    data-aos="zoom-in"
-                    data-aos-duration="1000"
-              />
-              <div className={styles.ContentLeft}>
-                  <Description
-                      title={"Everything about astrology"}
-                      margin={"10px"}
-                      size={"60px"}
-                      weight={500}
-                      mwidth={"535px"}
-                  />
+                <img 
+                        src="/features/stons/stons.svg" 
+                        alt="background"
+                        className={styles.BackgroundImage}
+                        data-aos="zoom-in"
+                        data-aos-duration="1000"
+                />
 
-                  <Title
-                      title={"Astrology reveals how celestial patterns at birth may impact our character and life's path. It invites us to study the planets and stars, offering insights into the energies that shape our daily lives. This time-honored tradition connects us with the cosmos, helping us to comprehend life's deeper forces and find direction and wisdom in the grand scheme of existence."}
-                      size={"16px"}
-                      color={"#fff"}
-                      margin={"10px"}
-                      mwidth={"603px"}
-                      weight={400}
-                  />
-              </div>
-              <Image
-                  src="/features/phone/phonebackground.svg"
-                  className={styles.ContentPhoneImage}
-                  data-aos="zoom-out"
-                  alt='phone image'
-                  width={756}
-                  height={612}
-                  data-aos-duration="2000"
-              />
-              <Image
-                  src="/features/phone/phone1.svg"
-                  className={styles.ContentPhoneImage2}
-                  data-aos="zoom-in"
-                  alt='phone image'
-                  width={756}
-                  height={612}
-                  data-aos-duration="2500"
-              />
+                <div className={styles.ContentLeft}>
+                    <Description
+                        title={"Everything about astrology"}
+                        margin={"10px"}
+                        size={"60px"}
+                        weight={500}
+                        mwidth={"535px"}
+                    />
+
+                    <Title
+                        title={"Astrology reveals how celestial patterns at birth may impact our character and life's path. It invites us to study the planets and stars, offering insights into the energies that shape our daily lives. This time-honored tradition connects us with the cosmos, helping us to comprehend life's deeper forces and find direction and wisdom in the grand scheme of existence."}
+                        size={"16px"}
+                        color={"#fff"}
+                        margin={"10px"}
+                        mwidth={"603px"}
+                        weight={400}
+                    />
+                    <img
+                        src="/mobile/phone.svg"
+                        alt="mobile"
+                        className={styles.mobilePhone1}
+                    />
+                </div>
+
+                <div>
+                    <Image
+                        src="/features/phone/phonebackground.svg"
+                        className={styles.ContentPhoneImage}
+                        data-aos="zoom-out"
+                        alt='phone image'
+                        width={756}
+                        height={612}
+                        data-aos-duration="2000"
+                    />
+                    <Image
+                        src="/features/phone/phone1.svg"
+                        className={styles.ContentPhoneImage2}
+                        data-aos="zoom-in"
+                        alt='phone image'
+                        width={756}
+                        height={612}
+                        data-aos-duration="2500"
+                    />
+                </div>
+                
                 <div onClick={() => push("#section2")} className={styles.BottomArrow}>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M11.2683 20.7072C11.4558 20.8947 11.7101 21 11.9753 21C12.2404 21 12.4948 20.8947 12.6823 20.7072L18.3393 15.0502C18.4348 14.958 18.511 14.8476 18.5634 14.7256C18.6158 14.6036 18.6434 14.4724 18.6445 14.3396C18.6457 14.2068 18.6204 14.0752 18.5701 13.9523C18.5198 13.8294 18.4456 13.7177 18.3517 13.6238C18.2578 13.5299 18.1461 13.4557 18.0232 13.4054C17.9003 13.3551 17.7687 13.3298 17.6359 13.331C17.5031 13.3321 17.3719 13.3597 17.2499 13.4121C17.1279 13.4645 17.0175 13.5407 16.9253 13.6362L12.9753 17.5862L12.9753 4.34321C12.9753 4.078 12.8699 3.82364 12.6824 3.63611C12.4949 3.44857 12.2405 3.34321 11.9753 3.34321C11.7101 3.34321 11.4557 3.44857 11.2682 3.63611C11.0806 3.82364 10.9753 4.078 10.9753 4.34321L10.9753 17.5862L7.02528 13.6362C6.83668 13.4541 6.58408 13.3533 6.32188 13.3555C6.05969 13.3578 5.80887 13.463 5.62347 13.6484C5.43806 13.8338 5.33289 14.0846 5.33061 14.3468C5.32833 14.609 5.42912 14.8616 5.61128 15.0502L11.2683 20.7072Z" fill="white"/>
@@ -124,6 +134,12 @@ const Features = () => {
                       margin={"10px"}
                       mwidth={"463px"}
                       weight={400}
+                  />
+
+                  <img
+                      src="/mobile/phone2.svg"
+                      alt="mobilePhone"
+                      className={styles.mobilePhone2}
                   />
               </div>
               {/* <Image
@@ -177,23 +193,29 @@ const Features = () => {
                     data-aos="zoom-in"
                     data-aos-duration="2500"    
               />
-              <div className={styles.ContentLeft}>
-                  <Description
-                      title={"Natal Chart"}
-                      margin={"10px"}
-                      size={"60px"}
-                      weight={500}
-                      mwidth={"350px"}
-                  />
+              <div className={`${styles.ContentLeft} ${styles.ContentMobile}`}>
+                    <Description
+                        title={"Natal Chart"}
+                        margin={"10px"}
+                        size={"60px"}
+                        weight={500}
+                        mwidth={"350px"}
+                    />
 
-                  <Title
-                      title={"Chart the positions of the planets at your birth to glean insights into your personal traits, strengths, and possible life paths.  The natal chart, a snapshot of the heavens at your moment of birth, serves as a celestial map to your individuality and potential. It's a tool for self-discovery, illuminating personal qualities and life challenges. Through its symbols, we can trace the contours of our destiny, finding clues to our aspirations and inherent capabilities. This astrological guide empowers us to navigate life's journey with greater self-awareness and purpose."}
-                      size={"16px"}
-                      color={"#fff"}
-                      margin={"10px"}
-                      mwidth={"554px"}
-                      weight={400}
-                  />
+                    <Title
+                        title={"Chart the positions of the planets at your birth to glean insights into your personal traits, strengths, and possible life paths.  The natal chart, a snapshot of the heavens at your moment of birth, serves as a celestial map to your individuality and potential. It's a tool for self-discovery, illuminating personal qualities and life challenges. Through its symbols, we can trace the contours of our destiny, finding clues to our aspirations and inherent capabilities. This astrological guide empowers us to navigate life's journey with greater self-awareness and purpose."}
+                        size={"16px"}
+                        color={"#fff"}
+                        margin={"10px"}
+                        mwidth={"554px"}
+                        weight={400}
+                    />
+
+                    <img 
+                        src="/mobile/phone3.svg" 
+                        alt="background" 
+                        className={styles.mobilePhone3}
+                    />
 
               </div>
                 <Image
@@ -261,7 +283,7 @@ const Features = () => {
             />
 
             
-            <div className={styles.SimpleContentRight}>
+            <div className={`${styles.SimpleContentRight} ${styles.mobileContent2}`}>
                 <Description
                     title={"Dream Interpretation"}
                     margin={"10px"}
@@ -277,6 +299,12 @@ const Features = () => {
                     margin={"10px"}
                     mwidth={"563px"}
                     weight={400}
+                />
+
+                <img
+                    src="/mobile/phone4.svg"
+                    alt="phone"
+                    className={styles.mobilePhone4}
                 />
             </div>
 
@@ -319,6 +347,12 @@ const Features = () => {
                     margin={"10px"}
                     mwidth={"610px"}
                     weight={400}
+                />
+
+                <img
+                    src="/mobile/phone5.svg"
+                    alt="mobile"
+                    className={styles.mobilePhone5}
                 />
             </div>
             <Image
@@ -404,6 +438,12 @@ const Features = () => {
                     margin={"10px"}
                     mwidth={"603px"}
                     weight={400}
+                />
+
+                <img
+                    src="/mobile/phone6.svg"
+                    alt="image"
+                    className={styles.mobilePhone6}
                 />
             </div>
         </div>

@@ -6,21 +6,24 @@ import Header from '@/shared/components/Header'
 import styles from './style.module.css'
 
 import { ToastContainer, toast } from 'react-toastify';
+import { contactUs } from '../../services/index'
 import Image from 'next/image'
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 // 107 116
 function Contact() {
+    const { i18n } = useTranslation()
     const [instagramHover,setInstagramHover] = useState(false)
     const [tiktokHover,setTiktokHover] = useState(false)
     const [formData, setFormData] = useState({
-        userName: "",
-        userSurname: "",
-        userEmail: "",
-        userDescription: "",
+        name: "",
+        surname: "",
+        email: "",
+        body: "",
     });
    
     const handleInputChange = (name, value) => {
-      if (name === "userDescription" && value.length > 200) {
+      if (name === "body" && value.length > 200) {
         toast.error("description uzunlugu maksimum 200 ola biler");
       } else {
         setFormData((prevData) => ({
@@ -29,21 +32,30 @@ function Contact() {
         }));
       }
     };
-    const sendData = () => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        if(formData.userName == ""){
-            toast.error("Zəhmət olmasa düzgün name daxil edin")
-        } else if(formData.userSurname == "") {
-            toast.error("Zəhmət olmasa düzgün Soyadi daxil edin")
-        } else if (emailRegex.test(formData.userEmail) == false ) {
-            toast.error("Zəhmət olmasa düzgün Email daxil edin")
-        }else if(formData.userDescription == "") {
-          toast.error("Zəhmət olmasa düzgün Description daxil edin")
-      }else{
-            toast.success("Bizimle elaqe yaradildi")
-            console.log(formData);
-        }
+    const sendData = async () => {
+      //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      //   if(formData.name == ""){
+      //       toast.error("Zəhmət olmasa düzgün name daxil edin")
+      //   } else if(formData.surname == "") {
+      //       toast.error("Zəhmət olmasa düzgün Soyadi daxil edin")
+      //   } else if (emailRegex.test(formData.email) == false ) {
+      //       toast.error("Zəhmət olmasa düzgün Email daxil edin")
+      //   }else if(formData.body == "") {
+      //     toast.error("Zəhmət olmasa düzgün Description daxil edin")
+      // }else{
+      //       toast.success("Bizimle elaqe yaradildi")
+      //       console.log(formData);
+      //   }
+          let data ={
+              "name": formData.name,
+              "surname": formData.surname,
+              "email": formData.email,
+              "body": formData.body
+          };
+          const response = await contactUs(data)
+          console.log(response);
     }
 
     return (
@@ -147,9 +159,9 @@ function Contact() {
                               path={"/input/user.svg"}
                               activePath={"/input/user2.svg"}
                               type={"text"}
-                              name={"userName"}
+                              name={"name"}
                               placeholder={"Name"}
-                              value={formData.userName}
+                              value={formData.name}
                               onInputChange={handleInputChange}
                           />
 
@@ -157,9 +169,9 @@ function Contact() {
                               path={"/input/user.svg"}
                               activePath={"/input/user2.svg"}
                               type={"text"}
-                              name={"userSurname"}
+                              name={"surname"}
                               placeholder={"Surname"}
-                              value={formData.userSurname}
+                              value={formData.surname}
                               onInputChange={handleInputChange}
                           />
 
@@ -167,22 +179,22 @@ function Contact() {
                               path={"/input/mail.svg"}
                               activePath={"/input/mail2.svg"}
                               type={"text"}
-                              name={"userEmail"}
+                              name={"email"}
                               placeholder={"Mail"}
-                              value={formData.userEmail}
+                              value={formData.email}
                               onInputChange={handleInputChange}
                           />
 
                           <TextArea
                               type={"text"}
-                              name={"userDescription"}
+                              name={"body"}
                               placeholder={"What do you want to tell us about ?"}
-                              value={formData.userDescription}
+                              value={formData.body}
                               onInputChange={handleInputChange}
                           />
 
                           <div className={styles.characterLength}>
-                            {formData.userDescription.length}/200
+                            {formData.body.length}/200
                           </div>
                       </div>
 

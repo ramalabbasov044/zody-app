@@ -15,6 +15,7 @@
     top: 44px;
     object-fit: cover;
     z-index: 0;
+    width: 100%;
 }
 
 .BackgroundImageMixed{
@@ -82,6 +83,7 @@
     position: absolute;
     left: 0;
     top: 17px;
+    width: 100%;
 }
 
 .ContentTwo{
@@ -351,4 +353,202 @@
     left: 0px;
     object-fit: cover;
     z-index: 0;
+}
+
+/* Mobile */
+
+.mobilePhone1{
+    display: none;
+}
+
+.mobilePhone2{
+    display: none;
+}
+
+.mobilePhone3{
+    display: none;
+}
+
+.mobilePhone4{
+    display: none;
+}
+
+.mobilePhone5{
+    display: none;
+}
+
+.mobilePhone6{
+    display: none;
+}
+
+@media screen and (max-width: 1440px){
+    .ContentPhoneImage{
+        right: 77px;
+        max-width: 600px;
+    }
+    .ContentPhoneImage2{
+        right: 143px;
+        max-width: 220px;
+    }
+    .ContentLeft{
+        width: 48%;
+    }
+    .phoneBackground2{
+        max-width: 600px;
+        right: 59px;
+    }
+    .simplePhone2 {
+        max-width: 243px;
+        right: 124px;
+    }
+    .phoneBackground{
+        max-width: 700px;
+    }
+    .simplePhone{
+        max-width: 251px;
+        max-height: 473px;
+        left: 332px;
+        bottom: 180px;
+    }
+    .phoneImageFive{
+        right: -70px;
+    }
+    .bubbleImage{
+        right: 206px;
+    }
+    .BackgroundImageMixed{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .ContentOne{
+        flex-direction: column;
+    }
+    .ContentTwo{
+        padding: 100px 117px 0px 117px;
+    }
+    .ContentPhoneImage{
+        display: none;
+    }
+    .ContentPhoneImage2{
+        display: none;
+    }
+    .BottomArrow{
+        display: none;
+    }
+    .ContentLeft{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        padding: 67px 40px 0px 40px;
+        margin-top: 0px;
+    }
+    .mobilePhone1{
+        display: flex;
+        margin-top: 56px;
+    }
+    .mobilePhone2{
+        display: flex;
+        margin-top: 40px;
+    }
+    .phoneBackground{
+        display: none;
+    }
+    .simplePhone{
+        display: none;
+    }
+    .ContentLeft2{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 500px;
+    }
+    .phoneBackground2{
+        display: none;
+    }
+    .simplePhone{
+        display: none;
+    }
+    .simplePhone2{
+        display: none;
+    }
+    .mobilePhone3{
+        display: flex;
+        margin-top: 94px;
+    }
+    .ContentMobile{
+        margin-top: 220px !important;
+    }
+    .moonImage{
+        display: none;
+    }
+    .phoneImageEnd{
+        display: none;
+    }
+    .starImage{
+        display: none;
+    }
+    .SimpleContentPhoneImage{
+        display: none;
+    }
+    .SimpleContentRight{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        width: 100%;
+    }
+    .mobilePhone4{
+        display: flex;
+        margin-top: 94px;
+    }
+    .mobileContent2{
+        margin-top: 500px !important;
+    }
+    .SimpleContentReLeft{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+    .mobilePhone5{
+        display: flex;
+        margin-top: 80px;
+    }
+    .phoneImageFive{
+        display: none;
+    }
+    .bubbleImage{
+        display: none;
+    }
+    .simpleBoxes{
+        display: none;
+    }
+    .simplePhone3{
+        display: none;
+    }
+    .mixedImage{
+        display: none;
+    }
+    .MixedRight{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .mobilePhone6{
+        display: flex;
+    }
 }

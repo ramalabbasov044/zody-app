@@ -1,21 +1,23 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable @next/next/no-img-element */
 import Footer from '@/shared/components/Footer'
 import Header from '@/shared/components/Header'
 import Card from '@/shared/components/Card';
-import Data from '../../mock/data/data.json'
-import { Routes } from '../../shared/constants/Routes/index'
 import styles from './style.module.css'
 
+import { Routes } from '../../shared/constants/Routes/index'
+import { getBlogData } from '../../services/index'
 
 import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useRouter } from 'next/router';
-import Image from 'next/image'
 import { useEffect, useState } from 'react';
+
 
 export default function Blog({ data }) {
     const { push } = useRouter()
     const [slidesCount,setSlidesCount] = useState(4)
+    const [isNavigation,setIsNavigation] = useState(false)
     const [space,setSpace] = useState(37)
 
     const callBackId = (id) => {
@@ -44,6 +46,16 @@ export default function Blog({ data }) {
         }
     },[])
 
+    useEffect(() => {
+        if(data.length > 4){
+          setIsNavigation(true)
+        }else {
+          setIsNavigation(false)
+        }
+    }, [data])
+ 
+    console.log(data,"data");
+
     return (
       <div className={styles.Wrapper}>
         <Header />
@@ -62,31 +74,40 @@ export default function Blog({ data }) {
             />
 
           <main className={styles.Main}>
-              <div className={styles.content}>    
-                    <Swiper
-                        spaceBetween={space}
-                        slidesPerView={slidesCount}
-                        loop={true}
-                        pagination={{
-                          clickable: true,
-                        }}
-                        navigation={true}
-                        modules={[Pagination, Navigation]}
-                        className="mySwiper"
-                    >
+              {
+                data.length == 0 ? (
+                  <span className={styles.loader}>
+                      Loading
+                  </span>
+                ) : (
+                  <div className={styles.content}>    
+                          <Swiper
+                              spaceBetween={space}
+                              slidesPerView={slidesCount}
+                              loop={true}
+                              pagination={{
+                                clickable: true,
+                              }}
+                              navigation={isNavigation}
+                              modules={[Pagination, Navigation]}
+                              className="mySwiper"
+                          >
 
-                        {
-                          data.map((item) => (
-                            <SwiperSlide key={item.id}>
-                                <Card 
-                                    detail={item} 
-                                    callBackId={callBackId}
-                                />
-                            </SwiperSlide>
-                          ))
-                        }
-                    </Swiper>
-              </div>
+                              {
+                                data.map((item) => (
+                                  <SwiperSlide key={item.id}>
+                                      <Card 
+                                          detail={item} 
+                                          callBackId={callBackId}
+                                      />
+                                  </SwiperSlide>
+                                ))
+                              }
+                          </Swiper>
+                    </div>
+                )
+              }
+
               <div className={styles.mobilContent}>
                   <div className={styles.mobileCardBody}>
                         {
@@ -109,12 +130,18 @@ export default function Blog({ data }) {
 
 export async function getServerSideProps() {
   try {
+    const response = await getBlogData()
     return {
-     props: {
-        data: Data,
+      props: {
+        data: response.data.data,
       },
-    }; 
+    };
   } catch (err) {
     console.error(err);
+    return {
+      props: {
+        data: [],
+      },
+    };
   }
 }

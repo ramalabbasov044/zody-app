@@ -90,6 +90,8 @@
     font-weight: 400;
     line-height: 160%; 
     margin-bottom: 16px;
+    max-height: 286px;
+    overflow-y: scroll;
 }
 
 .productDate{
@@ -128,6 +130,8 @@
     border-radius: 20px;
 }
 
+
+
 @media screen and (max-width: 1254px){
     .productContent{
         gap: 20px;
@@ -150,6 +154,9 @@
 }
 
 @media screen and (max-width: 769px){
+    .ProductMain{
+        height: 900px;
+    }
     .productImage{
         width: 100%;
     }

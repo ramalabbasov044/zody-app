@@ -6,6 +6,7 @@
 
 .swiper-wrapper{
     height: fit-content;
+    justify-content: space-between;
 }
 
 .swiper-slide {
