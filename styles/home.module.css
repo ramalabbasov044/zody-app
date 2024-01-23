@@ -120,7 +120,7 @@
 
 .stoneImageOne{
     position: absolute;
-    left: 0;
+    left: -8px;
     width: 88px;
     height: 94px;
 }
@@ -130,6 +130,32 @@
     right: 82px;
     width: 157px;
     height: 72px;
+}
+
+.stoneImageTwo{
+    position: absolute;
+    left: 825px;
+    width: 50px;
+    height: 43px;
+}
+
+.stoneImageFive{
+    position: absolute;
+    left: 528px;
+    width: 102px;
+    height: 84px;
+}
+
+.stoneImageFour{
+    position: absolute;
+    left: 97px;
+    width: 102px;
+    height: 84px;
+}
+.stoneImageAll{
+    position: absolute;
+    left: 0;
+    width: 100%;
 }
 
 @media screen and (max-width:1440px){

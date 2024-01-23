@@ -9,7 +9,6 @@ import React, { useState } from 'react'
 const Help = () => {
     const [activeTab,setActiveTab] = useState(true)
     console.log(activeTab);
-
     return (
       <div className={styles.Wrapper}>
         <Head>

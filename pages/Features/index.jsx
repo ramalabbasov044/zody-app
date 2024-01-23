@@ -9,9 +9,36 @@ import { useRouter } from 'next/router'
 import styles from './style.module.css'
 import Head from 'next/head'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
 const Features = () => {
     const { push } = useRouter()
+    const [moveAmount, setMoveAmount] = useState(0);
+
+    useEffect(() => {
+        let prevScrollY = 0;
+
+        const handleScroll = () => {
+        const scrollPosition = window.scrollY;
+        const newMoveAmount = scrollPosition * 0.2;
+
+        const imageElements = document.querySelectorAll('.stoneImage');
+
+        imageElements.forEach((imageElement) => {
+            imageElement.style.transition = '1s';
+        });
+
+        prevScrollY = scrollPosition;
+        setMoveAmount(newMoveAmount);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+        window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
       <div className={styles.Wrapper}>
         <Head>
@@ -22,8 +49,6 @@ const Features = () => {
         </Head>
 
         <img
-            // width={0}
-            // height={0}
             src="/stars.png"
             alt='background'
             className={styles.Background}
@@ -31,16 +56,12 @@ const Features = () => {
 
 
         <img
-            // width={0}
-            // height={0}
             src="/stars.png"
             alt='background'
             className={styles.Background2}
         /> 
 
         <img
-            // width={0}
-            // height={0}
             src="/stars.png"
             alt='background'
             className={styles.Background3}
@@ -51,11 +72,10 @@ const Features = () => {
         <main className={styles.Main}>
           <div className={styles.ContentOne}>
                 <img 
-                        src="/features/stons/stons.svg" 
-                        alt="background"
-                        className={styles.BackgroundImage}
-                        data-aos="zoom-in"
-                        data-aos-duration="1000"
+                    src="/features/stons/stons.svg" 
+                    alt="background"
+                    className={styles.BackgroundImage}
+                    style={{ bottom: `${moveAmount + 1}px` }}
                 />
 
                 <div className={styles.ContentLeft}>
@@ -75,10 +95,17 @@ const Features = () => {
                         mwidth={"603px"}
                         weight={400}
                     />
+
                     <img
                         src="/mobile/phone.svg"
                         alt="mobile"
                         className={styles.mobilePhone1}
+                    />
+
+                    <img
+                        src="/mobile/phone7.svg"
+                        alt="phone"
+                        className={styles.mobilePhone7}
                     />
                 </div>
 
@@ -115,8 +142,7 @@ const Features = () => {
                 src="/features/stons/stons2.svg" 
                 alt="background" 
                 className={styles.BackgroundImage2}
-                data-aos="zoom-in"
-                data-aos-duration="1000"
+                style={{ bottom: `${moveAmount + -97}px` }}
             />
               <div className={styles.ContentLeft2}>
                   <Description
@@ -190,8 +216,7 @@ const Features = () => {
                     src="/features/stons/stons.svg" 
                     alt="background" 
                     className={styles.BackgroundImage}
-                    data-aos="zoom-in"
-                    data-aos-duration="2500"    
+                    style={{ bottom: `${moveAmount + -170}px` }}
               />
               <div className={`${styles.ContentLeft} ${styles.ContentMobile}`}>
                     <Description
@@ -246,7 +271,7 @@ const Features = () => {
 
             
             
-        <div id='section4'  className={styles.SimpleContent}>
+            <div id='section4'  className={styles.SimpleContent}>
             <Image
                 src="/features/bg.svg"
                 alt='background'
@@ -316,13 +341,12 @@ const Features = () => {
         </div>
 
         
-        <div id='section5' className={styles.SimpleContentRe}>
+            <div id='section5' className={styles.SimpleContentRe}>
             <img 
                 src="/features/stons/stons.svg" 
                 alt="background" 
                 className={styles.BackgroundImage}
-                data-aos="zoom-in"
-                data-aos-duration="1000"
+                style={{ bottom: `${moveAmount + -630}px` }}
             />
             {/* <Image
                 className={styles.starBackground}
@@ -354,6 +378,13 @@ const Features = () => {
                     alt="mobile"
                     className={styles.mobilePhone5}
                 />
+
+                <img
+                    src="/mobile/phone8.svg"
+                    alt="mobile"
+                    className={styles.mobilePhone8}
+                />
+
             </div>
             <Image
                 src="/features/newbg.svg"
@@ -419,8 +450,7 @@ const Features = () => {
                 src="/features/stons/stons.svg" 
                 alt="background" 
                 className={styles.BackgroundImageMixed}
-                data-aos="zoom-in"
-                data-aos-duration="1000"
+                style={{ bottom: `${moveAmount + -730}px` }}
             />
             <div className={styles.MixedRight}>
                 <Description

@@ -20,14 +20,12 @@ export default function Home() {
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const scale = scrollPosition > prevScrollY ? 1.2 : 1;
-      const newMoveAmount = scrollPosition * 0.3;
+      const newMoveAmount = scrollPosition * 0.2;
 
       // Update the top and transform properties based on scroll position
       const imageElements = document.querySelectorAll('.stoneImage');
 
       imageElements.forEach((imageElement) => {
-        imageElement.style.transform = `scale(${scale})`;
         imageElement.style.transition = '1s';
       });
 
@@ -72,13 +70,22 @@ export default function Home() {
 
                 <div className={styles.Content}>
                     <div className={styles.Top}>
-                        <img
+                        {/* <img
                             src="/home/group/stone.png"
                             className={`stoneImage ${styles.stoneImageOne}`}
                             alt=""
                             width={0}
                             height={0}
-                            style={{ bottom: `${moveAmount + 118}px` }}
+                            style={{ bottom: `${moveAmount + 485}px` }}
+                        />
+
+                        <img
+                            src="/home/group/stone2.png"
+                            className={`stoneImage ${styles.stoneImageTwo}`}
+                            alt=""
+                            width={0}
+                            height={0}
+                            style={{ bottom: `${moveAmount + 695}px` }}
                         />
 
                         <img
@@ -87,7 +94,32 @@ export default function Home() {
                             alt=""
                             width={0}
                             height={0}
-                            style={{ bottom: `${moveAmount + 451}px` }}
+                            style={{ bottom: `${moveAmount + 67.75}px` }}
+                        />
+
+                        <img
+                            src="/home/group/stone6.png"
+                            className={`stoneImage ${styles.stoneImageFive}`}
+                            alt=""
+                            width={0}
+                            height={0}
+                            style={{ bottom: `${moveAmount + 83}px` }}
+                        />
+
+                        <img
+                            src="/home/group/stone4.png"
+                            className={`stoneImage ${styles.stoneImageFour}`}
+                            alt=""
+                            width={0}
+                            height={0}
+                            style={{ bottom: `${moveAmount + 9}px` }}
+                        /> */}
+
+                        <img
+                            src="/features/stons/stones.png"
+                            alt='image'
+                            className={styles.stoneImageAll}
+                            style={{ bottom: `${moveAmount + 0}px` }}
                         />
 
 

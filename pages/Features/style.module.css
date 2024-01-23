@@ -12,9 +12,9 @@
 .BackgroundImage{
     position: absolute;
     left: 0;
-    top: 44px;
     object-fit: cover;
     z-index: 0;
+    max-width: 1355px;
     width: 100%;
 }
 
@@ -82,7 +82,6 @@
 .BackgroundImage2{
     position: absolute;
     left: 0;
-    top: 17px;
     width: 100%;
 }
 
@@ -381,6 +380,14 @@
     display: none;
 }
 
+.mobilePhone7{
+    display: none;
+}
+
+.mobilePhone8{
+    display: none;
+}
+
 @media screen and (max-width: 1440px){
     .ContentPhoneImage{
         right: 77px;
@@ -550,5 +557,38 @@
     }
     .mobilePhone6{
         display: flex;
+    }
+}
+
+@media screen and (max-width: 769px){
+    .mobilePhone1{
+        display: none;
+    }
+    .mobilePhone7{
+        display: flex;
+        margin-top: 40px;
+    }
+    .ContentLeft{
+        text-align: left;
+    }
+    .ContentOne{
+        padding: 25px 29px;
+    }
+    .BackgroundImage{
+        display: none;
+    }
+    .BackgroundImage2{
+        display: none;
+    }
+    .mobilePhone8{
+        display: flex;
+    }
+    .mobilePhone5{
+        display: none;
+    }
+    .SimpleContentReLeft{
+        text-align: left;
+        justify-content: center;
+        align-items: flex-start;
     }
 }
