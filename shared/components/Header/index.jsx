@@ -134,7 +134,7 @@ const Header = () => {
 
                 <div style={{right: isActiveMenu ? "0" : "-100%"}} className={styles.mobileContainer}>
                     <div className={styles.mobileHeader}>
-                        <svg width="39" height="48" viewBox="0 0 39 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg onClick={() => push("/")} width="39" height="48" viewBox="0 0 39 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_744_2030)">
                             <g filter="url(#filter0_dd_744_2030)">
                             <path d="M34.4657 31.9189L30.9116 36.9888C30.0268 38.252 28.6088 39.0003 27.0992 39.0003H7.18686C5.70968 39.0003 4.51201 37.762 4.51201 36.2347V33.7113C4.51201 33.0864 4.64436 32.4749 4.89334 31.9189H34.4657Z" fill="url(#paint0_linear_744_2030)"/>

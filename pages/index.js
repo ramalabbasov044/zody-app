@@ -21,14 +21,14 @@ export default function Home() {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const scale = scrollPosition > prevScrollY ? 1.2 : 1;
-      const newMoveAmount = scrollPosition * 0.1;
+      const newMoveAmount = scrollPosition * 0.3;
 
       // Update the top and transform properties based on scroll position
       const imageElements = document.querySelectorAll('.stoneImage');
 
       imageElements.forEach((imageElement) => {
         imageElement.style.transform = `scale(${scale})`;
-        imageElement.style.transition = '.4s';
+        imageElement.style.transition = '1s';
       });
 
       prevScrollY = scrollPosition;

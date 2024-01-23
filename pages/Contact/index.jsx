@@ -34,28 +34,32 @@ function Contact() {
     };
 
     const sendData = async () => {
-      //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-      //   if(formData.name == ""){
-      //       toast.error("Zəhmət olmasa düzgün name daxil edin")
-      //   } else if(formData.surname == "") {
-      //       toast.error("Zəhmət olmasa düzgün Soyadi daxil edin")
-      //   } else if (emailRegex.test(formData.email) == false ) {
-      //       toast.error("Zəhmət olmasa düzgün Email daxil edin")
-      //   }else if(formData.body == "") {
-      //     toast.error("Zəhmət olmasa düzgün Description daxil edin")
-      // }else{
-      //       toast.success("Bizimle elaqe yaradildi")
-      //       console.log(formData);
-      //   }
-          let data ={
-              "name": formData.name,
-              "surname": formData.surname,
-              "email": formData.email,
-              "body": formData.body
-          };
-          const response = await contactUs(data)
-          console.log(response);
+        if(formData.name == ""){
+            toast.error("Zəhmət olmasa düzgün name daxil edin")
+        } else if(formData.surname == "") {
+            toast.error("Zəhmət olmasa düzgün Soyadi daxil edin")
+        } else if (emailRegex.test(formData.email) == false ) {
+            toast.error("Zəhmət olmasa düzgün Email daxil edin")
+        }else if(formData.body == "") {
+          toast.error("Zəhmət olmasa düzgün Description daxil edin")
+        }else{
+            let data ={
+                "name": formData.name,
+                "surname": formData.surname,
+                "email": formData.email,
+                "body": formData.body
+            };
+            const response = await contactUs(data)
+            console.log(response)
+            if(response.status == 200){
+              toast.success("Bizimle elaqe yaradildi")
+            }else{
+              toast.error("Bizimle elaqe yaradildilarkən prablem oldu")
+            }
+        }
+          
     }
 
     return (

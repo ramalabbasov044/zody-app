@@ -22,7 +22,7 @@ const Card = ({ detail , callBackId }) => {
 
           <p className={styles.cardDescription}>
               {
-                detail.desc
+                detail.content
               }
           </p>
 
