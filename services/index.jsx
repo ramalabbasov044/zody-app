@@ -9,14 +9,13 @@ const instanceAxios = axios.create({
         'X-language': `en`
     },
     redirect: 'follow'
-
 });
 
 export const getBlogData = async () => {
     try{
         const response = await instanceAxios.get(`/blog`,{
           headers: {
-            'X-language': `en`
+            'X-language': `ru`
           }
         });
     

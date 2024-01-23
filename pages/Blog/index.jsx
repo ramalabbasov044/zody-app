@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable @next/next/no-img-element */
 import Footer from '@/shared/components/Footer'
 import Header from '@/shared/components/Header'
@@ -12,6 +11,7 @@ import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 
 export default function Blog({ data }) {
@@ -23,6 +23,7 @@ export default function Blog({ data }) {
     const callBackId = (id) => {
       push(Routes.Product(id))
     } 
+
 
     useEffect(() => {
       if(window.innerWidth > 1440){

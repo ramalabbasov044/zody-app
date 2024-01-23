@@ -6,10 +6,9 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body style={{fontFamily: i18n.language == 'ru' ? "Montserrat" : null}}>
+      <body style={{fontFamily: i18n.language == "ru" ? "Montserrat" : ""}}>
         <Main />
         <NextScript />
-          
       </body>
     </Html>
   )

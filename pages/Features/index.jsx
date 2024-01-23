@@ -483,7 +483,6 @@ const Features = () => {
         </main>
 
         
-        
         <Footer />
       </div>
     )

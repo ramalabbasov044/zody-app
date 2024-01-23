@@ -57,7 +57,7 @@ export default function Product () {
                     ) : (
                         <div className={styles.productContent}>
                             <div className={styles.productDetail}>
-                                <p className={styles.productTitle}>
+                                <p className={styles.productTitle}  style={{fontFamily: i18n.language == "ru" ? "Montserrat" : "Poppins"}} >
                                     {
                                         productDetail ? productDetail.title : <></>
                                     }

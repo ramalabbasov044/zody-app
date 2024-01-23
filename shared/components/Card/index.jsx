@@ -2,8 +2,10 @@
 import Image from 'next/image';
 import React from 'react'
 import styles from './style.module.css'
+import { useTranslation } from 'react-i18next';
 
 const Card = ({ detail , callBackId }) => {
+  const {i18n} = useTranslation()
     return (
       <div className={styles.card}>
           <img
@@ -14,13 +16,13 @@ const Card = ({ detail , callBackId }) => {
               height={211}
           />
 
-          <p className={styles.cardTitle}>
+          <p className={styles.cardTitle} style={{fontFamily: i18n.language == "ru" ? "Montserrat" : "Poppins"}}>
               {
                 detail.title
               }
           </p>
 
-          <p className={styles.cardDescription}>
+          <p className={styles.cardDescription} style={{fontFamily: i18n.language == "ru" ? "Montserrat" : "Poppins"}}>
               {
                 detail.content
               }
