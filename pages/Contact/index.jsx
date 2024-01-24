@@ -74,7 +74,7 @@ function Contact() {
             formData.surname === '' ||
             formData.email === '' ||
             formData.body === '' ||
-            formData.body.length > 200
+            formData.body.length === '' 
         );
     };
 
