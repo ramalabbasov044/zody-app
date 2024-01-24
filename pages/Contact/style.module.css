@@ -156,7 +156,6 @@
     width: 100%;
     border: 0;
     margin-top: 38px;
-    cursor: pointer;
     padding: 14px;
     border-radius: 1000px;
     background: var(--Gradient-3, linear-gradient(95deg, #7537D9 5.72%, #5818BE 96.01%));

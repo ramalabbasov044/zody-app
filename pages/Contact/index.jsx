@@ -8,7 +8,7 @@ import styles from './style.module.css'
 import { ToastContainer, toast } from 'react-toastify';
 import { contactUs } from '../../services/index'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 // 107 116
 function Contact() {
@@ -23,44 +23,64 @@ function Contact() {
     });
    
     const handleInputChange = (name, value) => {
-      if (name === "body" && value.length > 200) {
-        toast.error("description uzunlugu maksimum 200 ola biler");
-      } else {
         setFormData((prevData) => ({
           ...prevData,
           [name]: value,
         }));
-      }
     };
 
     const sendData = async () => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        if(formData.name == ""){
-            toast.error("Zəhmət olmasa düzgün name daxil edin")
-        } else if(formData.surname == "") {
-            toast.error("Zəhmət olmasa düzgün Soyadi daxil edin")
-        } else if (emailRegex.test(formData.email) == false ) {
-            toast.error("Zəhmət olmasa düzgün Email daxil edin")
-        }else if(formData.body == "") {
-          toast.error("Zəhmət olmasa düzgün Description daxil edin")
-        }else{
-            let data ={
-                "name": formData.name,
-                "surname": formData.surname,
-                "email": formData.email,
-                "body": formData.body
-            };
-            const response = await contactUs(data)
-            console.log(response)
-            if(response.status == 200){
-              toast.success("Bizimle elaqe yaradildi")
-            }else{
-              toast.error("Bizimle elaqe yaradildilarkən prablem oldu")
-            }
-        }
-          
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+/;
+  
+      if (formData.name === "") {
+          toast.error("Zəhmət olmasa düzgün name daxil edin");
+      } else if (formData.surname === "") {
+          toast.error("Zəhmət olmasa düzgün Soyadi daxil edin");
+      } else if (emailRegex.test(formData.email) === false) {
+          toast.error("Zəhmət olmasa düzgün Email daxil edin");
+      } else if (formData.body === "") {
+          toast.error("Zəhmət olmasa düzgün Description daxil edin");
+      } else if(formData.body.length > 200) {
+        toast.error("description uzunlugu maksimum 200 ola biler");
+      }else {
+          let data = {
+              "name": formData.name,
+              "surname": formData.surname,
+              "email": formData.email,
+              "body": formData.body
+          };
+          const response = await contactUs(data);
+          if (response.status === 200) {
+              toast.success("Bizimle elaqe yaradıldı");
+              setFormData(
+                {
+                  name: "",
+                  surname: "",
+                  email: "",
+                  body: "",
+                }
+              )
+          } else {
+              toast.error("Bizimle elaqe yaradılarkən problem oldu");
+          }
+      }
     }
+
+    const [isDisabled, setIsDisabled] = useState(true);
+
+    const updateIsDisabled = () => {
+        setIsDisabled(
+            formData.name === '' ||
+            formData.surname === '' ||
+            formData.email === '' ||
+            formData.body === '' ||
+            formData.body.length > 200
+        );
+    };
+
+    useEffect(() => {
+        updateIsDisabled();
+    }, [formData]);
 
     return (
       <div className={styles.Wrapper}>
@@ -202,7 +222,7 @@ function Contact() {
                           </div>
                       </div>
 
-                      <button onClick={sendData} className={styles.sendButton}>
+                      <button  style={{cursor: !isDisabled ? "pointer": "auto"}} onClick={sendData} disabled={isDisabled} className={styles.sendButton}>
                         Send
                       </button>
                   </div>

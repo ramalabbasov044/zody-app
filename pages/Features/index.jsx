@@ -106,6 +106,8 @@ const Features = () => {
                         src="/mobile/phone7.svg"
                         alt="phone"
                         className={styles.mobilePhone7}
+                        data-aos-duration="2000"
+                        data-aos="zoom-out"
                     />
                 </div>
 
@@ -145,29 +147,36 @@ const Features = () => {
                 style={{ bottom: `${moveAmount + -97}px` }}
             />
               <div className={styles.ContentLeft2}>
-                  <Description
-                      title={"Match"}
-                      margin={"10px"}
-                      size={"60px"}
-                      weight={500}
-                      mwidth={211}
-                  />
+                    <Description
+                        title={"Match"}
+                        margin={"10px"}
+                        size={"60px"}
+                        weight={500}
+                        mwidth={211}
+                    />
 
-                  <Title
-                      title={"Meet your match with our dating feature. See profiles that match your zodiac sign. Like a profile to show interest. If they like you back, it's a match. Start chatting and see where the stars take you!"}
-                      size={"16px"}
-                      color={"#fff"}
-                      margin={"10px"}
-                      mwidth={"463px"}
-                      weight={400}
-                  />
+                    <Title
+                        title={"Meet your match with our dating feature. See profiles that match your zodiac sign. Like a profile to show interest. If they like you back, it's a match. Start chatting and see where the stars take you!"}
+                        size={"16px"}
+                        color={"#fff"}
+                        margin={"10px"}
+                        mwidth={"463px"}
+                        weight={400}
+                    />
 
-                  <img
-                      src="/mobile/phone2.svg"
-                      alt="mobilePhone"
-                      className={styles.mobilePhone2}
-                  />
+                    <img
+                        src="/mobile/phone2.svg"
+                        alt="mobilePhone"
+                        className={styles.mobilePhone2}
+                    />
+
+                    <img
+                        src="/mobile/phone9.svg"
+                        alt="mobilePhone"
+                        className={styles.mobilePhone9}
+                    />
               </div>
+
               {/* <Image
                   src="/features/phone/phone2.svg"
                   alt='Phone Image'
@@ -242,6 +251,12 @@ const Features = () => {
                         className={styles.mobilePhone3}
                     />
 
+
+                    <img 
+                        src="/mobile/phone10.svg" 
+                        alt="background" 
+                        className={styles.mobilePhone10}
+                    />
               </div>
                 <Image
                         src="/features/phone/simplephone2.svg"
@@ -331,6 +346,12 @@ const Features = () => {
                     alt="phone"
                     className={styles.mobilePhone4}
                 />
+
+                    <img 
+                        src="/mobile/phone11.svg" 
+                        alt="background" 
+                        className={styles.mobilePhone11}
+                    />
             </div>
 
             <div onClick={() => push("#section5")} className={styles.BottomArrow}>
@@ -380,9 +401,9 @@ const Features = () => {
                 />
 
                 <img
-                    src="/mobile/phone8.svg"
+                    src="/mobile/phone12.svg"
                     alt="mobile"
-                    className={styles.mobilePhone8}
+                    className={styles.mobilePhone12}
                 />
 
             </div>
@@ -452,29 +473,36 @@ const Features = () => {
                 className={styles.BackgroundImageMixed}
                 style={{ bottom: `${moveAmount + -730}px` }}
             />
+
             <div className={styles.MixedRight}>
-                <Description
-                    title={"Numerology"}
-                    margin={"10px"}
-                    size={"60px"}
-                    weight={500}
-                    mwidth={"373px"}
-                />
+                    <Description
+                        title={"Numerology"}
+                        margin={"10px"}
+                        size={"60px"}
+                        weight={500}
+                        mwidth={"373px"}
+                    />
 
-                <Title
-                    title={"Numerology delves into the mystical relationship between numbers and life events. By analyzing your birth date and name, you can uncover your unique numerological profile, which offers insights into your innate strengths, challenges, and life purpose. This ancient practice helps in identifying favorable opportunities and potential obstacles, guiding your decisions and actions. Embracing numerology can lead to a greater understanding of your place in the world and how you interact with others, providing a complementary perspective to astrological interpretations."}
-                    size={"16px"}
-                    color={"#fff"}
-                    margin={"10px"}
-                    mwidth={"603px"}
-                    weight={400}
-                />
+                    <Title
+                        title={"Numerology delves into the mystical relationship between numbers and life events. By analyzing your birth date and name, you can uncover your unique numerological profile, which offers insights into your innate strengths, challenges, and life purpose. This ancient practice helps in identifying favorable opportunities and potential obstacles, guiding your decisions and actions. Embracing numerology can lead to a greater understanding of your place in the world and how you interact with others, providing a complementary perspective to astrological interpretations."}
+                        size={"16px"}
+                        color={"#fff"}
+                        margin={"10px"}
+                        mwidth={"603px"}
+                        weight={400}
+                    />
 
-                <img
-                    src="/mobile/phone6.svg"
-                    alt="image"
-                    className={styles.mobilePhone6}
-                />
+                    <img
+                        src="/mobile/phone6.svg"
+                        alt="image"
+                        className={styles.mobilePhone6}
+                    />
+
+                    <img 
+                        src="/mobile/phone13.svg" 
+                        alt="background" 
+                        className={styles.mobilePhone13}
+                    />
             </div>
         </div>
 

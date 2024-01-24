@@ -372,6 +372,10 @@
     display: none;
 }
 
+.mobilePhone10{
+    display: none;
+}
+
 .mobilePhone5{
     display: none;
 }
@@ -387,6 +391,23 @@
 .mobilePhone8{
     display: none;
 }
+
+.mobilePhone9{
+    display: none;
+}
+
+.mobilePhone11{
+    display: none;
+}
+
+.mobilePhone12{
+    display: none;
+}
+
+.mobilePhone13{
+    display: none;
+}
+
 
 @media screen and (max-width: 1440px){
     .ContentPhoneImage{
@@ -586,9 +607,48 @@
     .mobilePhone5{
         display: none;
     }
+    .mobilePhone2{
+        display: none;
+    }
+    .mobilePhone9{
+        display: flex;
+        margin-top: 20px;
+    }
+    .mobilePhone3{
+        display: none;
+    }
+    .mobilePhone10{
+        display: flex;
+        margin-top: 45px;
+    }
+    .mobilePhone4{
+        display: none;
+    }
+    .mobilePhone11{
+        display: flex;
+        margin-top: 30px;
+    }
     .SimpleContentReLeft{
         text-align: left;
         justify-content: center;
+        align-items: flex-start;
+    }
+    .mobilePhone12{
+        display: flex;
+        margin-top: 30px;
+    }
+    .mobilePhone6{
+        display: none;
+    }
+    .mobilePhone13{
+        display: flex;
+    }
+
+    .mobilePhone6{
+        display: none;
+    }
+    .ContentLeft{
+        padding: 10px 0px 0px 0px;
         align-items: flex-start;
     }
 }

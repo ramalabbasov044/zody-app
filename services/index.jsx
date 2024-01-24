@@ -15,7 +15,7 @@ export const getBlogData = async () => {
     try{
         const response = await instanceAxios.get(`/blog`,{
           headers: {
-            'X-language': `ru`
+            'X-language': `en`
           }
         });
     
@@ -41,7 +41,6 @@ export const getBlogItem = async (CURRENT_ID,language) => {
 
 export const contactUs = async (data) => {
   try {
-      console.log(data);
       const response = await instanceAxios.post(`/contact`, data);
       return response
   } catch(error) {
