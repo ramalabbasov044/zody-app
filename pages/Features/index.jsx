@@ -109,6 +109,14 @@ const Features = () => {
                         data-aos-duration="2000"
                         data-aos="zoom-out"
                     />
+
+                    <img
+                        src="/mobile/phone14.svg"
+                        alt="phone"
+                        className={styles.mobilePhone14}
+                        data-aos-duration="2500"
+                        data-aos="zoom-in"
+                    />
                 </div>
 
                 <div>
@@ -174,6 +182,16 @@ const Features = () => {
                         src="/mobile/phone9.svg"
                         alt="mobilePhone"
                         className={styles.mobilePhone9}
+                        // data-aos-duration="2000"
+                        // data-aos="zoom-out"
+                    />
+
+                    <img
+                        src="/mobile/phone15.svg"
+                        alt="mobilePhone"
+                        className={styles.mobilePhone15}
+                        data-aos-duration="2500"
+                        data-aos="zoom-in"
                     />
               </div>
 
@@ -227,7 +245,7 @@ const Features = () => {
                     className={styles.BackgroundImage}
                     style={{ bottom: `${moveAmount + -170}px` }}
               />
-              <div className={`${styles.ContentLeft} ${styles.ContentMobile}`}>
+              <div className={`${styles.ContentLeft} ${styles.ContentMobile} ${styles.sectionContentLeft}`}>
                     <Description
                         title={"Natal Chart"}
                         margin={"10px"}
@@ -256,6 +274,8 @@ const Features = () => {
                         src="/mobile/phone10.svg" 
                         alt="background" 
                         className={styles.mobilePhone10}
+                        ata-aos-duration="2500"
+                        data-aos="zoom-in"
                     />
               </div>
                 <Image
@@ -287,78 +307,97 @@ const Features = () => {
             
             
             <div id='section4'  className={styles.SimpleContent}>
-            <Image
-                src="/features/bg.svg"
-                alt='background'
-                width={588}
-                height={625}
-                className={styles.SimpleContentPhoneImage}
-                data-aos="zoom-in"
-                data-aos-duration="2000"
-            />
-
-            <Image
-                src="/features/moon.svg"
-                alt="moon Image"
-                width={0}
-                height={0}
-                className={styles.moonImage}
-            />
-
-            <img
-                src="/newI.png"
-                alt="phone"
-                className={styles.phoneImageEnd}
-                data-aos="zoom-in"
-                data-aos-duration="2500"
-            />
-            
-            <Image
-                src="/features/star.svg"
-                alt="moon Image"
-                width={0}
-                height={0}
-                className={styles.starImage}
-                
-            />
-
-            
-            <div className={`${styles.SimpleContentRight} ${styles.mobileContent2}`}>
-                <Description
-                    title={"Dream Interpretation"}
-                    margin={"10px"}
-                    size={"60px"}
-                    weight={500}
-                    mwidth={"417px"}
+                <Image
+                    src="/features/bg.svg"
+                    alt='background'
+                    width={588}
+                    height={625}
+                    className={styles.SimpleContentPhoneImage}
+                    data-aos="zoom-out"
+                    data-aos-duration="2000"
                 />
 
-                <Title
-                    title={"Dream interpretation with astrology helps simplify the complex symbols of your dreams, revealing hidden desires and thoughts. It uses the positions of stars and planets to make sense of the subconscious, aiding in personal insight and growth. By connecting dreams to astrology, we can better understand ourselves and make informed choices for our future."}
-                    size={"16px"}
-                    color={"#fff"}
-                    margin={"10px"}
-                    mwidth={"563px"}
-                    weight={400}
+                <Image
+                    src="/features/moon.svg"
+                    alt="moon Image"
+                    width={0}
+                    height={0}
+                    className={styles.moonImage}
                 />
 
                 <img
-                    src="/mobile/phone4.svg"
+                    src="/newI.png"
                     alt="phone"
-                    className={styles.mobilePhone4}
+                    className={styles.phoneImageEnd}
+                    data-aos="zoom-in"
+                    data-aos-duration="2500"
+                />
+                
+                <Image
+                    src="/features/star.svg"
+                    alt="moon Image"
+                    width={0}
+                    height={0}
+                    className={styles.starImage}
+                    
                 />
 
-                    <img 
-                        src="/mobile/phone11.svg" 
-                        alt="background" 
-                        className={styles.mobilePhone11}
+                
+                <div className={`${styles.SimpleContentRight} ${styles.mobileContent2}`}>
+                    <Description
+                        title={"Dream Interpretation"}
+                        margin={"10px"}
+                        size={"60px"}
+                        weight={500}
+                        mwidth={"417px"}
                     />
-            </div>
 
-            <div onClick={() => push("#section5")} className={styles.BottomArrow}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11.2683 20.7072C11.4558 20.8947 11.7101 21 11.9753 21C12.2404 21 12.4948 20.8947 12.6823 20.7072L18.3393 15.0502C18.4348 14.958 18.511 14.8476 18.5634 14.7256C18.6158 14.6036 18.6434 14.4724 18.6445 14.3396C18.6457 14.2068 18.6204 14.0752 18.5701 13.9523C18.5198 13.8294 18.4456 13.7177 18.3517 13.6238C18.2578 13.5299 18.1461 13.4557 18.0232 13.4054C17.9003 13.3551 17.7687 13.3298 17.6359 13.331C17.5031 13.3321 17.3719 13.3597 17.2499 13.4121C17.1279 13.4645 17.0175 13.5407 16.9253 13.6362L12.9753 17.5862L12.9753 4.34321C12.9753 4.078 12.8699 3.82364 12.6824 3.63611C12.4949 3.44857 12.2405 3.34321 11.9753 3.34321C11.7101 3.34321 11.4557 3.44857 11.2682 3.63611C11.0806 3.82364 10.9753 4.078 10.9753 4.34321L10.9753 17.5862L7.02528 13.6362C6.83668 13.4541 6.58408 13.3533 6.32188 13.3555C6.05969 13.3578 5.80887 13.463 5.62347 13.6484C5.43806 13.8338 5.33289 14.0846 5.33061 14.3468C5.32833 14.609 5.42912 14.8616 5.61128 15.0502L11.2683 20.7072Z" fill="white"/>
-                </svg>
-            </div>
+                    <Title
+                        title={"Dream interpretation with astrology helps simplify the complex symbols of your dreams, revealing hidden desires and thoughts. It uses the positions of stars and planets to make sense of the subconscious, aiding in personal insight and growth. By connecting dreams to astrology, we can better understand ourselves and make informed choices for our future."}
+                        size={"16px"}
+                        color={"#fff"}
+                        margin={"10px"}
+                        mwidth={"563px"}
+                        weight={400}
+                    />
+
+                    <img
+                        src="/mobile/phone4.svg"
+                        alt="phone"
+                        className={styles.mobilePhone4}
+                    />
+
+                        <img 
+                            src="/mobile/phone11.svg" 
+                            alt="background" 
+                            className={styles.mobilePhone11}
+                            data-aos="zoom-out"
+                            data-aos-duration="2000"
+                        />
+
+                        <img 
+                            src="/mobile/phone16.svg" 
+                            alt="background" 
+                            className={styles.mobilePhone16}
+                            data-aos="zoom-in"
+                            data-aos-duration="2500"
+                        />
+
+
+                        <img 
+                            src="/mobile/phone17.svg" 
+                            alt="background" 
+                            className={styles.mobilePhone17}
+                            data-aos="zoom-in"
+                            data-aos-duration="2500"
+                        />
+                </div>
+
+                <div onClick={() => push("#section5")} className={styles.BottomArrow}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.2683 20.7072C11.4558 20.8947 11.7101 21 11.9753 21C12.2404 21 12.4948 20.8947 12.6823 20.7072L18.3393 15.0502C18.4348 14.958 18.511 14.8476 18.5634 14.7256C18.6158 14.6036 18.6434 14.4724 18.6445 14.3396C18.6457 14.2068 18.6204 14.0752 18.5701 13.9523C18.5198 13.8294 18.4456 13.7177 18.3517 13.6238C18.2578 13.5299 18.1461 13.4557 18.0232 13.4054C17.9003 13.3551 17.7687 13.3298 17.6359 13.331C17.5031 13.3321 17.3719 13.3597 17.2499 13.4121C17.1279 13.4645 17.0175 13.5407 16.9253 13.6362L12.9753 17.5862L12.9753 4.34321C12.9753 4.078 12.8699 3.82364 12.6824 3.63611C12.4949 3.44857 12.2405 3.34321 11.9753 3.34321C11.7101 3.34321 11.4557 3.44857 11.2682 3.63611C11.0806 3.82364 10.9753 4.078 10.9753 4.34321L10.9753 17.5862L7.02528 13.6362C6.83668 13.4541 6.58408 13.3533 6.32188 13.3555C6.05969 13.3578 5.80887 13.463 5.62347 13.6484C5.43806 13.8338 5.33289 14.0846 5.33061 14.3468C5.32833 14.609 5.42912 14.8616 5.61128 15.0502L11.2683 20.7072Z" fill="white"/>
+                    </svg>
+                </div>
         </div>
 
         
@@ -369,13 +408,6 @@ const Features = () => {
                 className={styles.BackgroundImage}
                 style={{ bottom: `${moveAmount + -630}px` }}
             />
-            {/* <Image
-                className={styles.starBackground}
-                src="/features/stars/stars.svg"
-                alt='star'
-                width={1512}
-                height={1000}
-            /> */}
             <div className={styles.SimpleContentReLeft}>
                 <Description
                     title={"Chat"}
@@ -492,16 +524,20 @@ const Features = () => {
                         weight={400}
                     />
 
-                    <img
-                        src="/mobile/phone6.svg"
-                        alt="image"
-                        className={styles.mobilePhone6}
+                    <img 
+                        src="/mobile/phone16.svg" 
+                        alt="background" 
+                        className={styles.mobilePhone19}
+                        data-aos="zoom-out"
+                        data-aos-duration="2000"
                     />
 
                     <img 
-                        src="/mobile/phone13.svg" 
+                        src="/mobile/phone18.svg" 
                         alt="background" 
-                        className={styles.mobilePhone13}
+                        className={styles.mobilePhone18}
+                        data-aos="zoom-in"
+                        data-aos-duration="2000"
                     />
             </div>
         </div>

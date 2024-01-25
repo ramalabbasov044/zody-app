@@ -408,6 +408,30 @@
     display: none;
 }
 
+.mobilePhone14{
+    display: none;
+}
+
+.mobilePhone15{
+    display: none;
+}
+
+.mobilePhone16{
+    display: none;
+}
+
+.mobilePhone17{
+    display: none;
+}
+
+.mobilePhone18{
+    display: none;
+}
+
+
+.mobilePhone19{
+    display: none;
+}
 
 @media screen and (max-width: 1440px){
     .ContentPhoneImage{
@@ -585,61 +609,157 @@
     .mobilePhone1{
         display: none;
     }
+
     .mobilePhone7{
         display: flex;
         margin-top: 40px;
     }
+
+    .mobilePhone14{
+        position: absolute;
+        bottom: 0;
+        left: 70px;
+        display: flex;
+        margin-top: -100px;
+        max-width: 188px;
+        max-height: 382px;
+    }
+
     .ContentLeft{
         text-align: left;
     }
+
+    .ContentLeft2{
+        text-align: left;
+        align-items: flex-start;
+        margin-top: 750px;
+    }
+
     .ContentOne{
         padding: 25px 29px;
     }
+
+    .ContentTwo{
+        padding: 25px 29px;
+    }
+
+    .SimpleContentRight{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .MixedRight{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .SimpleContent{
+        padding: 25px 29px;
+    }
+
+    .SimpleContentRe{
+        padding: 25px 29px;
+    }
+
+    .MixedContent{
+        padding: 25px 29px 50px 29px;
+    }
+
     .BackgroundImage{
         display: none;
     }
+
     .BackgroundImage2{
         display: none;
-    }
+    }  
+
     .mobilePhone8{
         display: flex;
     }
+
     .mobilePhone5{
         display: none;
     }
+
     .mobilePhone2{
         display: none;
     }
+
     .mobilePhone9{
         display: flex;
-        margin-top: 20px;
+        margin-top: 100px;
     }
+
+    .mobilePhone15{
+        display: flex;
+        position: absolute;
+        bottom: -210px;
+        left: 50px;
+        max-width: 230px;
+        max-height: 390px;
+        width: 100%;
+    }
+
     .mobilePhone3{
         display: none;
     }
+
     .mobilePhone10{
         display: flex;
         margin-top: 45px;
     }
+
     .mobilePhone4{
         display: none;
     }
+
     .mobilePhone11{
         display: flex;
-        margin-top: 30px;
+        max-width: 314px;
+        width: 100%;
     }
+
+    .mobilePhone17{
+        display: flex;
+        position: absolute;
+        max-width: 377px;
+        max-height: 400px;
+        width: 100%;
+        bottom: 58px;
+        left: -17px;
+    }
+    
+    .mobilePhone16{
+        display: flex;
+        bottom: 47px;
+        position: absolute;
+    }
+
+    .BackgroundImageMixed{
+        display: none;
+    }
+
     .SimpleContentReLeft{
         text-align: left;
         justify-content: center;
         align-items: flex-start;
     }
+
     .mobilePhone12{
         display: flex;
         margin-top: 30px;
     }
+
     .mobilePhone6{
         display: none;
     }
+
     .mobilePhone13{
         display: flex;
     }
@@ -647,8 +767,57 @@
     .mobilePhone6{
         display: none;
     }
+
     .ContentLeft{
         padding: 10px 0px 0px 0px;
         align-items: flex-start;
+    }
+
+    .sectionContentLeft{
+        margin-top: 580px !important;
+    }
+
+    .SimpleContentRight{
+        margin-top: 900px !important;
+    }
+
+    .mobilePhone18{
+        display: flex;
+        max-width: 206px;
+        max-height: 355px;
+        position: absolute;
+        bottom: 40px;
+        left: 24%;
+    }
+    
+    .mobilePhone19{
+        display: flex;
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .ContentLeft2{
+        text-align: left;
+        align-items: flex-start;
+        margin-top: 930px;
+    }
+}
+
+@media screen and (max-width: 398px){
+    .ContentOne{
+        padding: 25px 15px 25px 15px;
+    }
+    .ContentTwo{
+        padding: 25px 15px 25px 15px;
+    }
+    .SimpleContent{
+        padding: 25px 15px 25px 15px;
+    }
+    .SimpleContentRe{
+        padding: 25px 15px 25px 15px;
+    }
+    .MixedContent{
+        padding: 25px 15px 55px 15px;
     }
 }

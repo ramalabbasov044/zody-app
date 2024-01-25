@@ -22,7 +22,7 @@ const Header = () => {
   
     const changeLanguage = (lng) => {
         i18n.changeLanguage(lng)
-        setIsActive(false);
+        setIsActive(true);
     }
 
     const isMenu = useCallback(() => {
