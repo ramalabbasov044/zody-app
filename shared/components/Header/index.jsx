@@ -5,7 +5,7 @@ import Button from '../Button'
 import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
 import styles from './style.module.css'
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { activeLink } from "../../../utils/activeLink";
 import Head from 'next/head'
 
@@ -28,6 +28,14 @@ const Header = () => {
     const isMenu = useCallback(() => {
       setIsActiveMenu(() => true);
     }, []);
+
+    useEffect(() => {
+        if(isActiveMenu){
+            let main = document.querySelector('main')
+            main.style.zIndex = 2
+            console.log(main);
+          }
+    },[isActiveMenu])
   
     const languages = ['en', 'az', 'tr', 'ru'].filter((lng) => lng !== activeLanguage);
   

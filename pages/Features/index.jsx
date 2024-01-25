@@ -69,7 +69,7 @@ const Features = () => {
 
         <Header />
 
-        <main className={styles.Main}>
+        <main className={styles.Main} >
           <div className={styles.ContentOne}>
                 <img 
                     src="/features/stons/stons.svg" 
