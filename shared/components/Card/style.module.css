@@ -30,8 +30,18 @@
     max-height: 58px;
     overflow-y: scroll;
 }
-.cardTitle &::-webkit-scrollbar{
-    background-color: red;
+
+.cardTitle::-webkit-scrollbar {
+    width: 3px; 
+}
+
+.cardTitle::-webkit-scrollbar-thumb {
+    background-color: #A67DFF; 
+    border-radius: 4px;
+}
+
+.cardTitle::-webkit-scrollbar-track {
+    background: transparent;
 }
 
 .cardDescription{
@@ -47,6 +57,19 @@
     max-width: 258px;
     max-height: 66px;
     overflow-y: scroll;
+}
+
+.cardDescription::-webkit-scrollbar {
+    width: 3px; 
+}
+
+.cardDescription::-webkit-scrollbar-thumb {
+    background-color: #A67DFF; 
+    border-radius: 4px;
+}
+
+.cardDescription::-webkit-scrollbar-track {
+    background: transparent;
 }
 
 .cardBottom{

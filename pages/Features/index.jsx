@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-sync-scripts */
 /* eslint-disable @next/next/no-img-element */
+
 import Description from '@/shared/components/Description'
 import Title from '@/shared/components/Title'
 import Footer from '@/shared/components/Footer'
@@ -14,21 +14,61 @@ import { useEffect, useState } from 'react'
 const Features = () => {
     const { push } = useRouter()
     const [moveAmount, setMoveAmount] = useState(0);
-    const [scrollPosition, setScrollPosition] = useState(0);
+    const [stone1ScrollPosition, setStone1ScrollPosition] = useState(0);
+    const [stone1MoveAmount, setStone1MoveAmount] = useState(0);
+
+    const [stone2ScrollPosition, setStone2ScrollPosition] = useState(0);
+    const [stone2MoveAmount, setStone2MoveAmount] = useState(0);
+
+    const [stone3ScrollPosition, setStone3ScrollPosition] = useState(0);
+    const [stone3MoveAmount, setStone3MoveAmount] = useState(0);
+
+    const [stone4ScrollPosition, setStone4ScrollPosition] = useState(0);
+    const [stone4MoveAmount, setStone4MoveAmount] = useState(0);
+
+    const [stone5ScrollPosition, setStone5ScrollPosition] = useState(0);
+    const [stone5MoveAmount, setStone5MoveAmount] = useState(0);
 
     useEffect(() => {
-            const handleScroll = () => {
-            const newScrollPosition = window.scrollY;
-            const newMoveAmount = newScrollPosition * 0.2;
+        const handleScroll = () => {
+            const updateStonePosition = (stoneNumber, factor) => {
+                const newScrollPosition = window.scrollY;
+                const newMoveAmount = newScrollPosition * factor;
 
-            const imageElements = document.querySelectorAll('#stone');
+                const imageElement = document.getElementById(`stone${stoneNumber}`);
 
-            imageElements.forEach((imageElement) => {
-                imageElement.style.transition = '1s';
-            });
+                // imageElement.style.transition = '1s';
+                switch (stoneNumber) {
+                    case 1:
+                        setStone1ScrollPosition(newScrollPosition);
+                        setStone1MoveAmount(newMoveAmount);
+                        break;
+                    case 2:
+                        setStone2ScrollPosition(newScrollPosition);
+                        setStone2MoveAmount(newMoveAmount);
+                        break;
+                    case 3:
+                        setStone3ScrollPosition(newScrollPosition);
+                        setStone3MoveAmount(newMoveAmount);
+                        break;
+                    case 4:
+                        setStone4ScrollPosition(newScrollPosition);
+                        setStone4MoveAmount(newMoveAmount);
+                        break;
+                    case 5:
+                        setStone5ScrollPosition(newScrollPosition);
+                        setStone5MoveAmount(newMoveAmount);
+                        break;
+                    default:
+                        break;
+                }
+            };
 
-            setScrollPosition(newScrollPosition);
-            setMoveAmount(newMoveAmount);
+            updateStonePosition(1, 1);
+            updateStonePosition(2, 1);
+            updateStonePosition(3, 1);
+            updateStonePosition(4, 1);
+            updateStonePosition(5, 1);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -39,8 +79,11 @@ const Features = () => {
     }, []);
 
     const initialPosition = 0; 
-    const arrowTransform = `translate3d(0, ${initialPosition - scrollPosition * 0.5}px, 0)`;
-
+    const arrowTransform1 = `translate3d(0, ${initialPosition - stone1ScrollPosition * 0.5}px, 0)`;
+    const arrowTransform2 = `translate3d(0, ${initialPosition - stone2ScrollPosition * 0.4}px, 0)`;
+    const arrowTransform3 = `translate3d(0, ${initialPosition - stone3ScrollPosition * 0.14}px, 0)`;
+    const arrowTransform4 = `translate3d(0, ${initialPosition - stone4ScrollPosition * 0.10}px, 0)`;
+    const arrowTransform5 = `translate3d(0, ${initialPosition - stone5ScrollPosition * 0.07}px, 0)`;
 
     return (
       <div className={styles.Wrapper}>
@@ -57,18 +100,6 @@ const Features = () => {
             className={styles.Background}
         /> 
 
-{/* 
-        <img
-            src="/background.svg"
-            alt='background'
-            className={styles.Background2}
-        /> 
-
-        <img
-            src="/background.svg"
-            alt='background'
-            className={styles.Background3}
-        />  */}
 
         <Header />
 
@@ -76,10 +107,10 @@ const Features = () => {
           <div className={styles.ContentOne}>
                 <img 
                     src="/features/stons/stons.svg" 
-                    id='stone'
+                    id='stone1'
                     alt="background"
                     className={styles.BackgroundImage}
-                    style={{ transform: arrowTransform }}
+                    style={{ transform: arrowTransform1 }}
                 />
 
                 <div className={styles.ContentLeft}>
@@ -155,8 +186,9 @@ const Features = () => {
             <img 
                 src="/features/stons/stons2.svg" 
                 alt="background" 
+                id='stone2'
                 className={styles.BackgroundImage2}
-                style={{ transform: arrowTransform }}
+                style={{ transform: arrowTransform2 }}
             />
 
               <div className={styles.ContentLeft2}>
@@ -229,11 +261,12 @@ const Features = () => {
             <div id='section3' className={styles.ContentOne}>
               <img 
                     src="/features/stons/stons.svg" 
-                    id='stone'
+                    id='stone3'
                     alt="background" 
                     className={styles.BackgroundImage}
-                    style={{ transform: arrowTransform }}
+                    style={{ transform: arrowTransform3 }}
               />
+
               <div className={`${styles.ContentLeft} ${styles.ContentMobile} ${styles.sectionContentLeft}`}>
                     <Description
                         title={"Natal Chart"}
@@ -394,9 +427,9 @@ const Features = () => {
                 <img 
                     src="/features/stons/stons.svg" 
                     alt="background" 
-                    id='stone'
+                    id='stone4'
                     className={styles.BackgroundImage}
-                    style={{ transform: arrowTransform }}
+                    style={{ transform: arrowTransform4 }}
                 />
                 <div className={styles.SimpleContentReLeft}>
                     <Description
@@ -455,6 +488,7 @@ const Features = () => {
                 </div>
             </div>
             
+            
             <div id='section6' className={styles.MixedContent}>
                 <Image
                     src="/features/phone/simplebackground.svg"
@@ -489,10 +523,10 @@ const Features = () => {
                 
                 <img 
                     src="/features/stons/stons.svg"
-                    id='stone'
+                    id='stone5'
                     alt="background" 
                     className={styles.BackgroundImageMixed}
-                    style={{ transform: arrowTransform }}
+                    style={{ transform: arrowTransform5 }}
                 />
 
                 <div className={styles.MixedRight}>
