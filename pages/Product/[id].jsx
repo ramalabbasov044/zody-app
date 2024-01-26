@@ -11,11 +11,14 @@ import { useRouter } from 'next/router'
 import Image from 'next/image'
 
 export default function Product () {
+    const [moveAmount, setMoveAmount] = useState(0);
+    const [scrollPosition, setScrollPosition] = useState(0);
     const [productDetail, setProductDetail] = useState([])
+
     const { i18n } = useTranslation()
-    const router = useRouter()
-    const CURRENTID = typeof window !== 'undefined' ? router.asPath.split("/")[2] : null
-  
+    const { asPath } = useRouter()
+
+    const CURRENTID = typeof window !== 'undefined' ? asPath.split("/")[2] : null
     const getDetail = async () => {
         try {
             const response = await getBlogItem(CURRENTID, i18n.language)
@@ -31,12 +34,37 @@ export default function Product () {
       }
     }, [i18n.language, CURRENTID])
 
+    useEffect(() => {
+            const handleScroll = () => {
+            const newScrollPosition = window.scrollY;
+            const newMoveAmount = newScrollPosition * 0.2;
+
+            const imageElements = document.querySelectorAll('#stone');
+
+            imageElements.forEach((imageElement) => {
+                imageElement.style.transition = '1s';
+            });
+
+            setScrollPosition(newScrollPosition);
+            setMoveAmount(newMoveAmount);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [moveAmount]);
+
+    const initialPosition = 0; 
+    const arrowTransform = `translate3d(0, ${initialPosition - scrollPosition * 0.5}px, 0)`;
+
     return (
         <div className={styles.ProductWrapper}>
             <Header />
 
             <img
-                src="/stars.png"
+                src="/background.svg"
                 alt='background'
                 className={styles.Background}
             /> 
@@ -44,6 +72,7 @@ export default function Product () {
                 src="/blog/stones.svg"
                 alt='background'
                 className={styles.stonesImage}
+                style={{ transform: arrowTransform }}
                 width={1512}
                 height={0}
             />

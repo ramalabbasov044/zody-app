@@ -14,30 +14,33 @@ import { useEffect, useState } from 'react'
 const Features = () => {
     const { push } = useRouter()
     const [moveAmount, setMoveAmount] = useState(0);
+    const [scrollPosition, setScrollPosition] = useState(0);
 
     useEffect(() => {
-        let prevScrollY = 0;
+            const handleScroll = () => {
+            const newScrollPosition = window.scrollY;
+            const newMoveAmount = newScrollPosition * 0.2;
 
-        const handleScroll = () => {
-        const scrollPosition = window.scrollY;
-        const newMoveAmount = scrollPosition * 0.2;
+            const imageElements = document.querySelectorAll('#stone');
 
-        const imageElements = document.querySelectorAll('.stoneImage');
+            imageElements.forEach((imageElement) => {
+                imageElement.style.transition = '1s';
+            });
 
-        imageElements.forEach((imageElement) => {
-            imageElement.style.transition = '1s';
-        });
-
-        prevScrollY = scrollPosition;
-        setMoveAmount(newMoveAmount);
+            setScrollPosition(newScrollPosition);
+            setMoveAmount(newMoveAmount);
         };
 
         window.addEventListener('scroll', handleScroll);
 
         return () => {
-        window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
+    const initialPosition = 0; 
+    const arrowTransform = `translate3d(0, ${initialPosition - scrollPosition * 0.5}px, 0)`;
+
 
     return (
       <div className={styles.Wrapper}>
@@ -49,23 +52,23 @@ const Features = () => {
         </Head>
 
         <img
-            src="/stars.png"
+            src="/background.svg"
             alt='background'
             className={styles.Background}
         /> 
 
-
+{/* 
         <img
-            src="/stars.png"
+            src="/background.svg"
             alt='background'
             className={styles.Background2}
         /> 
 
         <img
-            src="/stars.png"
+            src="/background.svg"
             alt='background'
             className={styles.Background3}
-        /> 
+        />  */}
 
         <Header />
 
@@ -73,9 +76,10 @@ const Features = () => {
           <div className={styles.ContentOne}>
                 <img 
                     src="/features/stons/stons.svg" 
+                    id='stone'
                     alt="background"
                     className={styles.BackgroundImage}
-                    style={{ bottom: `${moveAmount + 1}px` }}
+                    style={{ transform: arrowTransform }}
                 />
 
                 <div className={styles.ContentLeft}>
@@ -152,8 +156,9 @@ const Features = () => {
                 src="/features/stons/stons2.svg" 
                 alt="background" 
                 className={styles.BackgroundImage2}
-                style={{ bottom: `${moveAmount + -97}px` }}
+                style={{ transform: arrowTransform }}
             />
+
               <div className={styles.ContentLeft2}>
                     <Description
                         title={"Match"}
@@ -195,16 +200,6 @@ const Features = () => {
                     />
               </div>
 
-              {/* <Image
-                  src="/features/phone/phone2.svg"
-                  alt='Phone Image'
-                  data-aos="zoom-in-up"
-                  data-aos-duration="1500"
-                  width={796}
-                  height={566}
-                  className={styles.PhoneImageTwo}
-              /> */}
-
                 <Image
                     src="/features/phone/background.svg"
                     alt='Phone Image'
@@ -232,18 +227,12 @@ const Features = () => {
           </div>
 
             <div id='section3' className={styles.ContentOne}>
-                {/* <Image
-                    className={styles.starBackground}
-                    src="/features/stars/stars.svg"
-                    alt='star'
-                    width={1512}
-                    height={1000}
-                /> */}
               <img 
                     src="/features/stons/stons.svg" 
+                    id='stone'
                     alt="background" 
                     className={styles.BackgroundImage}
-                    style={{ bottom: `${moveAmount + -170}px` }}
+                    style={{ transform: arrowTransform }}
               />
               <div className={`${styles.ContentLeft} ${styles.ContentMobile} ${styles.sectionContentLeft}`}>
                     <Description
@@ -402,151 +391,147 @@ const Features = () => {
 
         
             <div id='section5' className={styles.SimpleContentRe}>
-            <img 
-                src="/features/stons/stons.svg" 
-                alt="background" 
-                className={styles.BackgroundImage}
-                style={{ bottom: `${moveAmount + -630}px` }}
-            />
-            <div className={styles.SimpleContentReLeft}>
-                <Description
-                    title={"Chat"}
-                    margin={"10px"}
-                    size={"60px"}
-                    weight={500}
-                    mwidth={"149px"}
+                <img 
+                    src="/features/stons/stons.svg" 
+                    alt="background" 
+                    id='stone'
+                    className={styles.BackgroundImage}
+                    style={{ transform: arrowTransform }}
                 />
-
-                <Title
-                    title={"Engage in real-time discussions with astrology enthusiasts and experts, broadening your horizons with every conversation. The chat lets you talk with other astrology fans, learn new things, and share your own insights. It's a welcoming place for all your questions and ideas. Talking with others can help you understand astrology better, clear up any confusion, and could even lead to new hobbies or friendships. It's a great way to get better at understanding astrology and to enjoy its rich details even more."}
-                    size={"16px"}
-                    color={"#fff"}
-                    margin={"10px"}
-                    mwidth={"610px"}
-                    weight={400}
-                />
-
-                <img
-                    src="/mobile/phone5.svg"
-                    alt="mobile"
-                    className={styles.mobilePhone5}
-                />
-
-                <img
-                    src="/mobile/phone12.svg"
-                    alt="mobile"
-                    className={styles.mobilePhone12}
-                />
-
-            </div>
-            <Image
-                src="/features/newbg.svg"
-                alt='phone Image'
-                width={515}
-                height={515}
-                className={styles.phoneImageFive}
-                data-aos="zoom-in-up"
-                data-aos-duration="2000"
-            />
-            <Image
-                src="/features/bubbles.svg"
-                alt='phone Image'
-                width={515}
-                height={515}
-                className={styles.bubbleImage}
-                data-aos="zoom-in"
-                data-aos-duration="2500"
-            />
-
-            <div onClick={() => push("#section6")} className={styles.BottomArrow}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11.2683 20.7072C11.4558 20.8947 11.7101 21 11.9753 21C12.2404 21 12.4948 20.8947 12.6823 20.7072L18.3393 15.0502C18.4348 14.958 18.511 14.8476 18.5634 14.7256C18.6158 14.6036 18.6434 14.4724 18.6445 14.3396C18.6457 14.2068 18.6204 14.0752 18.5701 13.9523C18.5198 13.8294 18.4456 13.7177 18.3517 13.6238C18.2578 13.5299 18.1461 13.4557 18.0232 13.4054C17.9003 13.3551 17.7687 13.3298 17.6359 13.331C17.5031 13.3321 17.3719 13.3597 17.2499 13.4121C17.1279 13.4645 17.0175 13.5407 16.9253 13.6362L12.9753 17.5862L12.9753 4.34321C12.9753 4.078 12.8699 3.82364 12.6824 3.63611C12.4949 3.44857 12.2405 3.34321 11.9753 3.34321C11.7101 3.34321 11.4557 3.44857 11.2682 3.63611C11.0806 3.82364 10.9753 4.078 10.9753 4.34321L10.9753 17.5862L7.02528 13.6362C6.83668 13.4541 6.58408 13.3533 6.32188 13.3555C6.05969 13.3578 5.80887 13.463 5.62347 13.6484C5.43806 13.8338 5.33289 14.0846 5.33061 14.3468C5.32833 14.609 5.42912 14.8616 5.61128 15.0502L11.2683 20.7072Z" fill="white"/>
-                </svg>
-            </div>
-        </div>
-
-        
-        
-        <div id='section6' className={styles.MixedContent}>
-            <Image
-                src="/features/phone/simplebackground.svg"
-                alt='phone Image'
-                width={700}
-                height={715}
-                data-aos="zoom-in-up"
-                className={styles.mixedImage}
-                data-aos-duration="2000"
-            />
-
-            <Image
-                src="/phone/home/new.svg"
-                alt='phone Image'
-                width={700}
-                height={715}
-                data-aos="zoom-in"
-                className={styles.simplePhone3}
-                data-aos-duration="2500"
-            /> 
-
-            <Image
-                src="/features/phone/boxes.svg"
-                alt='phone Image'
-                width={700}
-                height={715}
-                data-aos="zoom-in"
-                className={styles.simpleBoxes}
-                data-aos-duration="3000"
-            />              
-
-            
-            <img 
-                src="/features/stons/stons.svg" 
-                alt="background" 
-                className={styles.BackgroundImageMixed}
-                style={{ bottom: `${moveAmount + -730}px` }}
-            />
-
-            <div className={styles.MixedRight}>
+                <div className={styles.SimpleContentReLeft}>
                     <Description
-                        title={"Numerology"}
+                        title={"Chat"}
                         margin={"10px"}
                         size={"60px"}
                         weight={500}
-                        mwidth={"373px"}
+                        mwidth={"149px"}
                     />
 
                     <Title
-                        title={"Numerology delves into the mystical relationship between numbers and life events. By analyzing your birth date and name, you can uncover your unique numerological profile, which offers insights into your innate strengths, challenges, and life purpose. This ancient practice helps in identifying favorable opportunities and potential obstacles, guiding your decisions and actions. Embracing numerology can lead to a greater understanding of your place in the world and how you interact with others, providing a complementary perspective to astrological interpretations."}
+                        title={"Engage in real-time discussions with astrology enthusiasts and experts, broadening your horizons with every conversation. The chat lets you talk with other astrology fans, learn new things, and share your own insights. It's a welcoming place for all your questions and ideas. Talking with others can help you understand astrology better, clear up any confusion, and could even lead to new hobbies or friendships. It's a great way to get better at understanding astrology and to enjoy its rich details even more."}
                         size={"16px"}
                         color={"#fff"}
                         margin={"10px"}
-                        mwidth={"603px"}
+                        mwidth={"610px"}
                         weight={400}
                     />
 
-                    <img 
-                        src="/mobile/phone16.svg" 
-                        alt="background" 
-                        className={styles.mobilePhone19}
-                        data-aos="zoom-out"
-                        data-aos-duration="2000"
+                    <img
+                        src="/mobile/phone5.svg"
+                        alt="mobile"
+                        className={styles.mobilePhone5}
                     />
 
-                    <img 
-                        src="/mobile/phone18.svg" 
-                        alt="background" 
-                        className={styles.mobilePhone18}
-                        data-aos="zoom-in"
-                        data-aos-duration="2000"
+                    <img
+                        src="/mobile/phone12.svg"
+                        alt="mobile"
+                        className={styles.mobilePhone12}
                     />
+
+                </div>
+                <Image
+                    src="/features/newbg.svg"
+                    alt='phone Image'
+                    width={515}
+                    height={515}
+                    className={styles.phoneImageFive}
+                    data-aos="zoom-in-up"
+                    data-aos-duration="2000"
+                />
+                <Image
+                    src="/features/bubbles.svg"
+                    alt='phone Image'
+                    width={515}
+                    height={515}
+                    className={styles.bubbleImage}
+                    data-aos="zoom-in"
+                    data-aos-duration="2500"
+                />
+
+                <div onClick={() => push("#section6")} className={styles.BottomArrow}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.2683 20.7072C11.4558 20.8947 11.7101 21 11.9753 21C12.2404 21 12.4948 20.8947 12.6823 20.7072L18.3393 15.0502C18.4348 14.958 18.511 14.8476 18.5634 14.7256C18.6158 14.6036 18.6434 14.4724 18.6445 14.3396C18.6457 14.2068 18.6204 14.0752 18.5701 13.9523C18.5198 13.8294 18.4456 13.7177 18.3517 13.6238C18.2578 13.5299 18.1461 13.4557 18.0232 13.4054C17.9003 13.3551 17.7687 13.3298 17.6359 13.331C17.5031 13.3321 17.3719 13.3597 17.2499 13.4121C17.1279 13.4645 17.0175 13.5407 16.9253 13.6362L12.9753 17.5862L12.9753 4.34321C12.9753 4.078 12.8699 3.82364 12.6824 3.63611C12.4949 3.44857 12.2405 3.34321 11.9753 3.34321C11.7101 3.34321 11.4557 3.44857 11.2682 3.63611C11.0806 3.82364 10.9753 4.078 10.9753 4.34321L10.9753 17.5862L7.02528 13.6362C6.83668 13.4541 6.58408 13.3533 6.32188 13.3555C6.05969 13.3578 5.80887 13.463 5.62347 13.6484C5.43806 13.8338 5.33289 14.0846 5.33061 14.3468C5.32833 14.609 5.42912 14.8616 5.61128 15.0502L11.2683 20.7072Z" fill="white"/>
+                    </svg>
+                </div>
             </div>
-        </div>
+            
+            <div id='section6' className={styles.MixedContent}>
+                <Image
+                    src="/features/phone/simplebackground.svg"
+                    alt='phone Image'
+                    width={700}
+                    height={715}
+                    data-aos="zoom-in-up"
+                    className={styles.mixedImage}
+                    data-aos-duration="2000"
+                />
 
+                <Image
+                    src="/phone/home/new.svg"
+                    alt='phone Image'
+                    width={700}
+                    height={715}
+                    data-aos="zoom-in"
+                    className={styles.simplePhone3}
+                    data-aos-duration="2500"
+                /> 
 
+                <Image
+                    src="/features/phone/boxes.svg"
+                    alt='phone Image'
+                    width={700}
+                    height={715}
+                    data-aos="zoom-in"
+                    className={styles.simpleBoxes}
+                    data-aos-duration="3000"
+                />              
 
+                
+                <img 
+                    src="/features/stons/stons.svg"
+                    id='stone'
+                    alt="background" 
+                    className={styles.BackgroundImageMixed}
+                    style={{ transform: arrowTransform }}
+                />
+
+                <div className={styles.MixedRight}>
+                        <Description
+                            title={"Numerology"}
+                            margin={"10px"}
+                            size={"60px"}
+                            weight={500}
+                            mwidth={"373px"}
+                        />
+
+                        <Title
+                            title={"Numerology delves into the mystical relationship between numbers and life events. By analyzing your birth date and name, you can uncover your unique numerological profile, which offers insights into your innate strengths, challenges, and life purpose. This ancient practice helps in identifying favorable opportunities and potential obstacles, guiding your decisions and actions. Embracing numerology can lead to a greater understanding of your place in the world and how you interact with others, providing a complementary perspective to astrological interpretations."}
+                            size={"16px"}
+                            color={"#fff"}
+                            margin={"10px"}
+                            mwidth={"603px"}
+                            weight={400}
+                        />
+
+                        <img 
+                            src="/mobile/phone16.svg" 
+                            alt="background" 
+                            className={styles.mobilePhone19}
+                            data-aos="zoom-out"
+                            data-aos-duration="2000"
+                        />
+
+                        <img 
+                            src="/mobile/phone18.svg" 
+                            alt="background" 
+                            className={styles.mobilePhone18}
+                            data-aos="zoom-in"
+                            data-aos-duration="2000"
+                        />
+                </div>
+            </div>
         </main>
 
-        
         <Footer />
       </div>
     )

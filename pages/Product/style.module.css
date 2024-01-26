@@ -57,6 +57,7 @@
     padding: 83px 116px 152px 132px;
     max-width: 1512px;
     width: 100%;
+    gap: 90px;
     display: flex;
     align-items: center;
     justify-content: space-between;

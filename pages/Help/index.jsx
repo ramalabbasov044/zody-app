@@ -4,11 +4,38 @@ import Header from '@/shared/components/Header'
 
 import styles from './style.module.css'
 import Head from 'next/head'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Help = () => {
     const [activeTab,setActiveTab] = useState(true)
-    console.log(activeTab);
+    const [moveAmount, setMoveAmount] = useState(0);
+    const [scrollPosition, setScrollPosition] = useState(0);
+
+    useEffect(() => {
+            const handleScroll = () => {
+            const newScrollPosition = window.scrollY;
+            const newMoveAmount = newScrollPosition * 0.2;
+
+            const imageElements = document.querySelectorAll('#stone');
+
+            imageElements.forEach((imageElement) => {
+                imageElement.style.transition = '1s';
+            });
+
+            setScrollPosition(newScrollPosition);
+            setMoveAmount(newMoveAmount);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const initialPosition = 0; 
+    const arrowTransform = `translate3d(0, ${initialPosition - scrollPosition * 0.5}px, 0)`;
+
     return (
       <div className={styles.Wrapper}>
         <Head>
@@ -21,10 +48,12 @@ const Help = () => {
             src="/help/bg2.svg" 
             alt="background" 
             className={styles.BackgroundImage}
+            style={{ transform: arrowTransform }}
+
         />
 
         <img
-            src="/stars.png"
+            src="/background.svg"
             alt='background'
             className={styles.Background}
         /> 

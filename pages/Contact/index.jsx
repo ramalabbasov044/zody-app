@@ -12,7 +12,6 @@ import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 // 107 116
 function Contact() {
-    const { i18n } = useTranslation()
     const [instagramHover,setInstagramHover] = useState(false)
     const [tiktokHover,setTiktokHover] = useState(false)
     const [formData, setFormData] = useState({
@@ -81,6 +80,33 @@ function Contact() {
     useEffect(() => {
         updateIsDisabled();
     }, [formData]);
+    const [moveAmount, setMoveAmount] = useState(0);
+    const [scrollPosition, setScrollPosition] = useState(0);
+
+    useEffect(() => {
+            const handleScroll = () => {
+            const newScrollPosition = window.scrollY;
+            const newMoveAmount = newScrollPosition * 0.2;
+
+            const imageElements = document.querySelectorAll('#stone');
+
+            imageElements.forEach((imageElement) => {
+                imageElement.style.transition = '1s';
+            });
+
+            setScrollPosition(newScrollPosition);
+            setMoveAmount(newMoveAmount);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const initialPosition = 0; 
+    const arrowTransform = `translate3d(0, ${initialPosition - scrollPosition * 0.5}px, 0)`;
 
     return (
       <div className={styles.Wrapper}>
@@ -88,7 +114,7 @@ function Contact() {
 
         <Header />
             <img
-                src="/stars.png"
+                src="/background.svg"
                 alt='background'
                 className={styles.Background}
             /> 
@@ -99,6 +125,7 @@ function Contact() {
               className={styles.stonesImage}
               width={1512}
               height={0}
+              style={{ transform: arrowTransform }}
           />
           
           <main className={styles.Main}>

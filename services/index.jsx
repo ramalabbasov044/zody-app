@@ -1,24 +1,23 @@
+import { useTranslation } from "react-i18next";
 import { baseUrl } from "../shared/constants/base/baseUrl";
 import axios from "axios";
-
 const instanceAxios = axios.create({
     baseURL: baseUrl,
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'X-language': `en`
+        // 'X-language': `${localStorage.getItem('activeLanguage')}`
     },
     redirect: 'follow'
 });
 
-export const getBlogData = async () => {
+export const getBlogData = async (LNG) => {
     try{
         const response = await instanceAxios.get(`/blog`,{
           headers: {
-            'X-language': `en`
+            'X-language': `${LNG}`
           }
         });
-    
         return response;
     } catch(error){
         console.log({ error })

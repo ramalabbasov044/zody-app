@@ -16,14 +16,16 @@ import { useTranslation } from 'react-i18next';
 
 export default function Blog({ data }) {
     const { push } = useRouter()
-    const [slidesCount,setSlidesCount] = useState(4)
+
+    const [scrollPosition, setScrollPosition] = useState(0);
     const [isNavigation,setIsNavigation] = useState(false)
+    const [moveAmount, setMoveAmount] = useState(0);
+    const [slidesCount,setSlidesCount] = useState(4)
     const [space,setSpace] = useState(37)
 
     const callBackId = (id) => {
       push(Routes.Product(id))
     } 
-
 
     useEffect(() => {
       if(window.innerWidth > 1440){
@@ -54,14 +56,38 @@ export default function Blog({ data }) {
           setIsNavigation(false)
         }
     }, [data])
- 
-    console.log(data,"data");
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const newScrollPosition = window.scrollY;
+            const newMoveAmount = newScrollPosition * 0.2;
+
+            const imageElements = document.querySelectorAll('#stone');
+
+            imageElements.forEach((imageElement) => {
+                imageElement.style.transition = '1s';
+            });
+
+            setScrollPosition(newScrollPosition);
+            setMoveAmount(newMoveAmount);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const initialPosition = 0; 
+    const arrowTransform = `translate3d(0, ${initialPosition - scrollPosition * 0.5}px, 0)`;
+
+ 
     return (
       <div className={styles.Wrapper}>
         <Header />
             <img
-                src="/stars.png"
+                src="/background.svg"
                 alt='background'
                 className={styles.Background}
             /> 
@@ -72,6 +98,7 @@ export default function Blog({ data }) {
                 className={styles.stonesImage}
                 width={1512}
                 height={0}
+                style={{ transform: arrowTransform }}
             />
 
           <main className={styles.Main}>
@@ -124,21 +151,26 @@ export default function Blog({ data }) {
                   </div>
               </div>
           </main>
+
         <Footer />
       </div>
     )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ query }) {
   try {
-    const response = await getBlogData()
+    console.log('Query parameters:', )
+
+    const response = await getBlogData(query.LNG);
+
     return {
       props: {
         data: response.data.data,
       },
     };
   } catch (err) {
-    console.error(err);
+    console.error('Error fetching blog data:', err);
+
     return {
       props: {
         data: [],
