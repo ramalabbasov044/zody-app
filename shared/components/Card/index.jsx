@@ -25,7 +25,7 @@ const Card = ({ detail , callBackId }) => {
           <p className={styles.cardDescription} style={{fontFamily: i18n.language == "ru" ? "Montserrat" : "Poppins"}}>
               {
                 detail.content
-              }
+              }  ...
           </p>
 
           <div className={styles.cardBottom}>

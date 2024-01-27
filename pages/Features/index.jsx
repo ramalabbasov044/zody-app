@@ -224,7 +224,7 @@ const Features = () => {
 
           <div id='section2' className={styles.ContentTwo}>
             <img 
-                src="/features/stons/stons2.svg" 
+                src="/features/stons/stones.png" 
                 alt="background" 
                 id='stone2'
                 className={styles.BackgroundImage2}

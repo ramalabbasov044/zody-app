@@ -56,11 +56,11 @@ export default function Home() {
                 className={styles.Background}
             /> 
 
-            <img
+            {/* <img
                 src="/background.svg"
                 alt='background'
                 className={styles.Background2}
-            /> 
+            />  */}
 
             <main className={styles.Main}>
                 <div className={styles.Content}>

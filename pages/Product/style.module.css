@@ -100,12 +100,15 @@
 }
 
 .productDescription::-webkit-scrollbar-thumb {
-    background-color: transparent   ; 
     border-radius: 4px;
+    background-color: #A67DFF;
+
 }
 
 .productDescription::-webkit-scrollbar-track {
     background: transparent;
+    border-radius: 4px;
+
 }
 
 .productDate{
