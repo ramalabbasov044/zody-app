@@ -13,62 +13,25 @@ import { useEffect, useState } from 'react'
 
 const Features = () => {
     const { push } = useRouter()
-    const [moveAmount, setMoveAmount] = useState(0);
-    const [stone1ScrollPosition, setStone1ScrollPosition] = useState(0);
-    const [stone1MoveAmount, setStone1MoveAmount] = useState(0);
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const [scrollPosition2, setScrollPosition2] = useState(0);
+    const [scrollPosition3, setScrollPosition3] = useState(0);
+    const [scrollPosition4, setScrollPosition4] = useState(0);
+    const [scrollPosition5, setScrollPosition5] = useState(0);
 
-    const [stone2ScrollPosition, setStone2ScrollPosition] = useState(0);
-    const [stone2MoveAmount, setStone2MoveAmount] = useState(0);
-
-    const [stone3ScrollPosition, setStone3ScrollPosition] = useState(0);
-    const [stone3MoveAmount, setStone3MoveAmount] = useState(0);
-
-    const [stone4ScrollPosition, setStone4ScrollPosition] = useState(0);
-    const [stone4MoveAmount, setStone4MoveAmount] = useState(0);
-
-    const [stone5ScrollPosition, setStone5ScrollPosition] = useState(0);
-    const [stone5MoveAmount, setStone5MoveAmount] = useState(0);
-
+    // 1
     useEffect(() => {
-        const handleScroll = () => {
-            const updateStonePosition = (stoneNumber, factor) => {
-                const newScrollPosition = window.scrollY;
-                const newMoveAmount = newScrollPosition * factor;
+            const handleScroll = () => {
+            const newScrollPosition = window.scrollY;
+            const newMoveAmount = newScrollPosition * 0.4;
 
-                const imageElement = document.getElementById(`stone${stoneNumber}`);
+            const imageElements = document.querySelectorAll('#stone');
 
-                // imageElement.style.transition = '1s';
-                switch (stoneNumber) {
-                    case 1:
-                        setStone1ScrollPosition(newScrollPosition);
-                        setStone1MoveAmount(newMoveAmount);
-                        break;
-                    case 2:
-                        setStone2ScrollPosition(newScrollPosition);
-                        setStone2MoveAmount(newMoveAmount);
-                        break;
-                    case 3:
-                        setStone3ScrollPosition(newScrollPosition);
-                        setStone3MoveAmount(newMoveAmount);
-                        break;
-                    case 4:
-                        setStone4ScrollPosition(newScrollPosition);
-                        setStone4MoveAmount(newMoveAmount);
-                        break;
-                    case 5:
-                        setStone5ScrollPosition(newScrollPosition);
-                        setStone5MoveAmount(newMoveAmount);
-                        break;
-                    default:
-                        break;
-                }
-            };
+            imageElements.forEach((imageElement) => {
+                imageElement.style.transition = '.9s';
+            });
 
-            updateStonePosition(1, 1);
-            updateStonePosition(2, 1);
-            updateStonePosition(3, 1);
-            updateStonePosition(4, 1);
-            updateStonePosition(5, 1);
+            setScrollPosition(newScrollPosition);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -79,12 +42,89 @@ const Features = () => {
     }, []);
 
     const initialPosition = 0; 
-    const arrowTransform1 = `translate3d(0, ${initialPosition - stone1ScrollPosition * 0.5}px, 0)`;
-    const arrowTransform2 = `translate3d(0, ${initialPosition - stone2ScrollPosition * 0.4}px, 0)`;
-    const arrowTransform3 = `translate3d(0, ${initialPosition - stone3ScrollPosition * 0.14}px, 0)`;
-    const arrowTransform4 = `translate3d(0, ${initialPosition - stone4ScrollPosition * 0.10}px, 0)`;
-    const arrowTransform5 = `translate3d(0, ${initialPosition - stone5ScrollPosition * 0.07}px, 0)`;
+    const arrowTransform = `translate3d(0, ${initialPosition - scrollPosition * 0.5}px, 0)`;
 
+    // 2
+    useEffect(() => {
+            const handleScroll = () => {
+                const newScrollPosition2 = window.scrollY;
+
+                console.log(newScrollPosition2)
+
+                if(newScrollPosition2 > 400){
+                    setScrollPosition2(newScrollPosition2);
+                }
+            };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const initialPosition2 = 0; 
+    const arrowTransform2 = `translate3d(0, ${initialPosition2 - scrollPosition2 * 0.5 + 200}px, 0)`;
+
+     // 3
+     useEffect(() => {
+            const handleScroll = () => {
+                const newScrollPosition3 = window.scrollY;
+                console.log(newScrollPosition3);
+                if(newScrollPosition3 > 1300){
+                    setScrollPosition3(newScrollPosition3);
+                }
+            };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const initialPosition3 = 0; 
+    const arrowTransform3 = `translate3d(0, ${initialPosition3 - scrollPosition3 * 0.5 + 550}px, 0)`;
+
+     // 4
+     useEffect(() => {
+            const handleScroll = () => {
+                const newScrollPosition4 = window.scrollY;
+                console.log(newScrollPosition4);
+                if(newScrollPosition4 > 2000){
+                    setScrollPosition4(newScrollPosition4);
+                }
+            };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const initialPosition4 = 0; 
+    const arrowTransform4 = `translate3d(0, ${initialPosition4 - scrollPosition4 * 0.5 + 1350}px, 0)`;
+
+    // 5
+    useEffect(() => {
+            const handleScroll = () => {
+                const newScrollPosition5 = window.scrollY;
+                console.log(newScrollPosition5);
+                if(newScrollPosition5 > 2200){
+                    setScrollPosition5(newScrollPosition5);
+                }
+            };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const initialPosition5 = 0; 
+    const arrowTransform5 = `translate3d(0, ${initialPosition5 - scrollPosition5 * 0.5 + 2000}px, 0)`;
     return (
       <div className={styles.Wrapper}>
         <Head>
@@ -110,7 +150,7 @@ const Features = () => {
                     id='stone1'
                     alt="background"
                     className={styles.BackgroundImage}
-                    style={{ transform: arrowTransform1 }}
+                    style={{ transform: arrowTransform }}
                 />
 
                 <div className={styles.ContentLeft}>
@@ -224,7 +264,7 @@ const Features = () => {
                     />
 
                     <img
-                        src="/mobile/phone15.svg"
+                        src="/features/match.png"
                         alt="mobilePhone"
                         className={styles.mobilePhone15}
                         data-aos-duration="2500"
@@ -242,7 +282,7 @@ const Features = () => {
                     className={styles.phoneBackground}
                 />
                <Image
-                    src="/features/phone/iphonr.png"
+                    src="/features/match.png"
                     alt='Phone Image'
                     data-aos="zoom-in"
                     data-aos-duration="2500"

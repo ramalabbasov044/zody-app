@@ -19,12 +19,12 @@ export default function Home() {
     useEffect(() => {
             const handleScroll = () => {
             const newScrollPosition = window.scrollY;
-            const newMoveAmount = newScrollPosition * 0.2;
+            const newMoveAmount = newScrollPosition * 0.4;
 
             const imageElements = document.querySelectorAll('#stone');
 
             imageElements.forEach((imageElement) => {
-                imageElement.style.transition = '1s';
+                imageElement.style.transition = '.9s';
             });
 
             setScrollPosition(newScrollPosition);
@@ -54,6 +54,12 @@ export default function Home() {
                 src="/background.svg"
                 alt='background'
                 className={styles.Background}
+            /> 
+
+            <img
+                src="/background.svg"
+                alt='background'
+                className={styles.Background2}
             /> 
 
             <main className={styles.Main}>

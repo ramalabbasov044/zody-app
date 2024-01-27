@@ -703,11 +703,11 @@
     .mobilePhone15{
         display: flex;
         position: absolute;
-        bottom: -210px;
-        left: 50px;
-        max-width: 230px;
-        max-height: 390px;
-        width: 100%;
+        bottom: -187px;
+        left: 59px;
+        max-width: 209px;
+        max-height: 350px;
+        width: 100%;    
     }
 
     .mobilePhone3{
