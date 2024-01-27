@@ -95,6 +95,19 @@
     overflow-y: scroll;
 }
 
+.productDescription::-webkit-scrollbar {
+    width: 3px; 
+}
+
+.productDescription::-webkit-scrollbar-thumb {
+    background-color: transparent   ; 
+    border-radius: 4px;
+}
+
+.productDescription::-webkit-scrollbar-track {
+    background: transparent;
+}
+
 .productDate{
     color: #A67DFF;
     font-family: Poppins;
